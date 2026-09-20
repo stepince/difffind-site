@@ -15,7 +15,7 @@ const HTML_MINIFY_OPTIONS = {
   minifyJS: true,
 };
 
-for (const file of ['index.html', 'privacy.html', 'terms.html']) {
+for (const file of ['index.html', 'privacy.html', 'terms.html', 'self-hosted.html']) {
   const source = await readFile(file, 'utf8');
   const minified = await minifyHtml(source, HTML_MINIFY_OPTIONS);
   await writeFile(`dist/${file}`, minified);
