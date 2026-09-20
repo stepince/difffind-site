@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Stephen Ince
+// Licensed under custom license. See LICENSE file.
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';

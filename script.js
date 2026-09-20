@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Stephen Ince
+// Licensed under custom license. See LICENSE file.
 // Change this URL when the app moves to a custom domain.
 const APP_URL = 'https://app.difffind.com';
 document.querySelectorAll('[data-app-link]').forEach(link => { link.href = `${APP_URL}/`; });
