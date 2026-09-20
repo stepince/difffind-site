@@ -1,6 +1,38 @@
-import { mkdir, copyFile, cp, rm } from 'node:fs/promises';
+import { mkdir, cp, rm, readFile, writeFile } from 'node:fs/promises';
+import { minify as minifyHtml } from 'html-minifier-terser';
+import { minify as minifyJs } from 'terser';
+
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist', { recursive: true });
-for (const file of ['index.html', 'privacy.html', 'terms.html', 'styles.css', 'script.js']) await copyFile(file, `dist/${file}`);
+
+// Same flags perfload's own build uses. Comments starting "<!--!" survive
+// removeComments (html-minifier-terser's convention for must-keep
+// comments, e.g. the license header) — see index.html/privacy.html/terms.html.
+const HTML_MINIFY_OPTIONS = {
+  collapseWhitespace: true,
+  removeComments: true,
+  minifyCSS: true,
+  minifyJS: true,
+};
+
+for (const file of ['index.html', 'privacy.html', 'terms.html']) {
+  const source = await readFile(file, 'utf8');
+  const minified = await minifyHtml(source, HTML_MINIFY_OPTIONS);
+  await writeFile(`dist/${file}`, minified);
+}
+
+{
+  const source = await readFile('script.js', 'utf8');
+  // terser's default `comments: 'some'` keeps /*! ... */ blocks (the
+  // license header) and drops everything else — matches the HTML pages'
+  // removeComments behavior above.
+  const result = await minifyJs(source);
+  await writeFile('dist/script.js', result.code);
+}
+
+// Already hand-minified to one line — passed through as-is rather than
+// pulling in a CSS minifier for a file that's already compact.
+await cp('styles.css', 'dist/styles.css');
 await cp('assets', 'dist/assets', { recursive: true });
+
 console.log('Built static website in dist/');
