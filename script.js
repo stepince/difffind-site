@@ -16,3 +16,14 @@ function pingAppWakeup() {
 }
 pingAppWakeup();
 setInterval(pingAppWakeup, 60000);
+
+// Cycle the hero preview between screenshots.
+const previewSlides = document.querySelectorAll('.preview-media .preview-screenshot');
+if (previewSlides.length > 1) {
+  let activeSlide = 0;
+  setInterval(() => {
+    previewSlides[activeSlide].classList.remove('is-active');
+    activeSlide = (activeSlide + 1) % previewSlides.length;
+    previewSlides[activeSlide].classList.add('is-active');
+  }, 5000);
+}
