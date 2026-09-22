@@ -4,8 +4,11 @@
  */
 // Change this URL when the app moves to a custom domain.
 const APP_URL = 'https://app.difffind.com';
-document.querySelectorAll('[data-app-link]').forEach(link => { link.href = `${APP_URL}/`; });
-document.querySelectorAll('[data-api-link]').forEach(link => { link.href = `${APP_URL}/openapi.json`; });
+// Named target so every "Open DiffFind" / API-docs link reuses one tab
+// instead of piling up a new app.difffind.com window on every click.
+const APP_WINDOW_TARGET = 'difffind-app';
+document.querySelectorAll('[data-app-link]').forEach(link => { link.href = `${APP_URL}/`; link.target = APP_WINDOW_TARGET; link.rel = 'noopener'; });
+document.querySelectorAll('[data-api-link]').forEach(link => { link.href = `${APP_URL}/openapi.json`; link.target = APP_WINDOW_TARGET; link.rel = 'noopener'; });
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 // Ping the app so it's already awake (Fly.io auto-stops on idle) by the
