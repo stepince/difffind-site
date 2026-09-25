@@ -24,4 +24,4 @@ Brand assets are cropped from the supplied `ChatGPT Image Sep 19, 2026, 02_56_52
 
 ## Feature pages
 
-`/text-compare/`, `/semantic-diff/`, and `/semantic-find/` are static directory-index pages. The local server also accepts each route without a trailing slash. Static hosts should serve directory indexes (and normally redirect to the trailing slash). Canonical URLs use the production domain in `CNAME`; update the feature-page canonical links if that domain changes. Shared styles, navigation behavior, and application links use `styles.css` and `script.js`. No analytics provider is configured.
+`/text-compare/`, `/semantic-diff/`, `/pdf-compare/`, and `/excel-compare/` are static directory-index pages. The local server also accepts each route without a trailing slash. Static hosts should serve directory indexes (and normally redirect to the trailing slash). Canonical URLs use the production domain in `CNAME`; update the feature-page canonical links if that domain changes. Shared styles, navigation behavior, and application links use `styles.css` and `script.js`. No analytics provider is configured.
