@@ -29,3 +29,6 @@
 .hero-full{padding-top:24px}.hero-full .eyebrow{margin-bottom:14px}.hero-full .quick-diff textarea{min-height:clamp(240px,36vh,540px)}
 @media(max-width:650px){.hero-full{padding-top:24px}.hero-full .quick-diff textarea{min-height:clamp(180px,28vh,300px)}}
 .quick-link{white-space:nowrap}.quick-diff-head h2{min-width:0}
+.hero-full .quick-diff{margin:0 12px 14px;padding:16px 14px}.hero-full .quick-diff textarea{min-height:clamp(300px,50vh,760px)}
+@media(max-width:900px){.hero-full .quick-diff{margin-inline:10px}}
+@media(max-width:650px){.hero-full .quick-diff{margin-inline:8px;padding:14px 10px}.hero-full .quick-diff textarea{min-height:clamp(200px,32vh,320px)}}
