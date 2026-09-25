@@ -8,8 +8,9 @@ const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascrip
 createServer(async (req, res) => {
   try {
     const path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-    const file = resolve(root, '.' + (path === '/' ? '/index.html' : path));
-    if (!file.startsWith(root + sep) || !['index.html', 'privacy.html', 'terms.html', 'self-hosted.html', 'styles.css', 'script.js'].includes(file.slice(root.length + 1)) && !file.startsWith(resolve(root, 'assets') + sep)) {
+    const featureRoute = /^\/(semantic-diff|text-compare|semantic-find)(?:\/|\/index\.html)?$/.exec(path);
+    const file = resolve(root, '.' + (featureRoute ? `/${featureRoute[1]}/index.html` : path === '/' ? '/index.html' : path));
+    if (!file.startsWith(root + sep) || !['index.html', 'privacy.html', 'terms.html', 'self-hosted.html', 'semantic-diff/index.html', 'text-compare/index.html', 'semantic-find/index.html', 'styles.css', 'script.js'].includes(file.slice(root.length + 1)) && !file.startsWith(resolve(root, 'assets') + sep)) {
       res.writeHead(404).end('Not found'); return;
     }
     const data = await readFile(file);

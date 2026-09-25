@@ -34,3 +34,16 @@ if (previewSlides.length > 1) {
     previewSlides[activeSlide].classList.add('is-active');
   }, 5000);
 }
+
+// Close the lightweight Features menu with Escape or an outside click.
+document.querySelectorAll('.feature-menu').forEach(menu => {
+  document.addEventListener('click', event => {
+    if (!menu.contains(event.target)) menu.open = false;
+  });
+  menu.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      menu.open = false;
+      menu.querySelector('summary').focus();
+    }
+  });
+});
