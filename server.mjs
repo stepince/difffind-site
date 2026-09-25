@@ -8,9 +8,9 @@ const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascrip
 createServer(async (req, res) => {
   try {
     const path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-    const featureRoute = /^\/(semantic-diff|text-compare|pdf-compare|excel-compare)(?:\/|\/index\.html)?$/.exec(path);
+    const featureRoute = /^\/(semantic-diff|text-compare|pdf-compare|excel-compare|json-compare|yaml-compare|xml-compare|csv-compare|url-compare|curl-compare)(?:\/|\/index\.html)?$/.exec(path);
     const file = resolve(root, '.' + (featureRoute ? `/${featureRoute[1]}/index.html` : path === '/' ? '/index.html' : path));
-    if (!file.startsWith(root + sep) || !['index.html', 'privacy.html', 'terms.html', 'self-hosted.html', 'semantic-diff/index.html', 'text-compare/index.html', 'pdf-compare/index.html', 'excel-compare/index.html', 'styles.css', 'script.js', 'robots.txt', 'sitemap.xml'].includes(file.slice(root.length + 1)) && !file.startsWith(resolve(root, 'assets') + sep)) {
+    if (!file.startsWith(root + sep) || !['index.html', 'privacy.html', 'terms.html', 'self-hosted.html', 'semantic-diff/index.html', 'text-compare/index.html', 'pdf-compare/index.html', 'excel-compare/index.html', 'json-compare/index.html', 'yaml-compare/index.html', 'xml-compare/index.html', 'csv-compare/index.html', 'url-compare/index.html', 'curl-compare/index.html', 'styles.css', 'script.js', 'robots.txt', 'sitemap.xml'].includes(file.slice(root.length + 1)) && !file.startsWith(resolve(root, 'assets') + sep)) {
       res.writeHead(404).end('Not found'); return;
     }
     const data = await readFile(file);

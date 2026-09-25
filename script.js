@@ -11,7 +11,13 @@ const APP_URL = 'https://app.difffind.com';
 // named-target reuse entirely. Safe to omit since app.difffind.com is our
 // own trusted domain.
 const APP_WINDOW_TARGET = 'difffind-app';
-document.querySelectorAll('[data-app-link]').forEach(link => { link.href = `${APP_URL}/`; link.target = APP_WINDOW_TARGET; });
+// data-app-input="file" (or url/curl/plain) opens the app with that input
+// type preselected via ?inputType=... — used by the PDF/Excel pages.
+document.querySelectorAll('[data-app-link]').forEach(link => {
+  const inputType = link.dataset.appInput;
+  link.href = inputType ? `${APP_URL}/?inputType=${encodeURIComponent(inputType)}` : `${APP_URL}/`;
+  link.target = APP_WINDOW_TARGET;
+});
 document.querySelectorAll('[data-api-link]').forEach(link => { link.href = `${APP_URL}/openapi.json`; link.target = APP_WINDOW_TARGET; });
 document.querySelector('#year').textContent = new Date().getFullYear();
 
