@@ -45,6 +45,15 @@
       <p class="hero-copy">From a single word to a complex document, see every difference<br class="desktop-break"> clearly. Add AI insight to understand the meaning behind the changes.</p>
       <div class="hero-actions"><a class="button" data-app-link href="https://app.difffind.com/">Start comparing <span aria-hidden="true">↗</span></a><a class="text-link" href="#preview">See it in action <span aria-hidden="true">↓</span></a></div>
       <p class="hero-note">Precise comparison at the core. AI when you need it.</p>
+      <form class="quick-diff" id="quickDiff" action="https://app.difffind.com/" method="get" aria-labelledby="quickDiffTitle">
+        <div class="quick-diff-head"><h2 id="quickDiffTitle">Try a quick text compare</h2><span class="quick-diff-tools"><button type="button" class="quick-link" id="quickExample">Load example</button><button type="button" class="quick-link" id="quickClear">Clear</button></span></div>
+        <div class="quick-diff-grid">
+          <label><span class="quick-label"><i class="dot old"></i>BEFORE</span><textarea id="quickBefore" rows="8" spellcheck="false" placeholder="Paste the original text"></textarea></label>
+          <label><span class="quick-label"><i class="dot new"></i>AFTER</span><textarea id="quickAfter" rows="8" spellcheck="false" placeholder="Paste the changed text"></textarea></label>
+        </div>
+        <div class="quick-diff-actions"><button type="submit" class="button">Find difference <span aria-hidden="true">&rarr;</span></button><p class="quick-status" id="quickStatus" role="status" aria-live="polite"></p></div>
+        <p class="quick-note">Your text goes to the DiffFind app only when you click Find difference. Nothing is stored on this page.</p>
+      </form>
       <div class="preview" id="preview">
         <div class="preview-toolbar"><div class="preview-title"><span class="mini-mark" aria-hidden="true">◧</span> A little change. A big difference.</div></div>
         <div class="preview-media">

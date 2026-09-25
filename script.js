@@ -53,3 +53,75 @@ document.querySelectorAll('.feature-menu').forEach(menu => {
     }
   });
 });
+
+// Quick text diff: hands the two texts to the app in the URL *fragment*
+// (never sent to any server, stripped by the app as soon as it reads it) and
+// navigates this tab to the app, which fills in and runs the comparison.
+// Format: #handoff=gz.<base64url of gzip(JSON)> or #handoff=raw.<base64url of JSON>.
+const quickForm = document.querySelector('#quickDiff');
+if (quickForm) {
+  const isLocalSite = ['localhost', '127.0.0.1'].includes(location.hostname);
+  // On a local dev server, hand off to a local copy of the app (port 3222).
+  const HANDOFF_APP_URL = isLocalSite ? 'http://localhost:3222' : APP_URL;
+  const MAX_FRAGMENT_CHARS = 60000; // stays under the smallest browser URL limits
+  const beforeEl = document.querySelector('#quickBefore');
+  const afterEl = document.querySelector('#quickAfter');
+  const statusEl = document.querySelector('#quickStatus');
+
+  const setStatus = (message, withAppLink) => {
+    statusEl.textContent = message;
+    if (withAppLink) {
+      statusEl.append(' ');
+      const link = document.createElement('a');
+      link.href = `${HANDOFF_APP_URL}/`;
+      link.textContent = 'Open DiffFind';
+      statusEl.append(link);
+    }
+  };
+  const toBase64Url = bytes => {
+    let binary = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+    return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  };
+  async function encodeHandoff(payload) {
+    const bytes = new TextEncoder().encode(JSON.stringify(payload));
+    if (typeof CompressionStream === 'function') {
+      const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
+      return `gz.${toBase64Url(new Uint8Array(await new Response(stream).arrayBuffer()))}`;
+    }
+    return `raw.${toBase64Url(bytes)}`;
+  }
+
+  quickForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    setStatus('');
+    const before = beforeEl.value;
+    const after = afterEl.value;
+    if (!before.trim() && !after.trim()) {
+      setStatus('Paste some text into Before and/or After first.');
+      return;
+    }
+    try {
+      const encoded = await encodeHandoff({ v: 1, before, after });
+      if (encoded.length > MAX_FRAGMENT_CHARS) {
+        setStatus('That much text is too large to carry over. Paste it directly in the app.', true);
+        return;
+      }
+      window.location.assign(`${HANDOFF_APP_URL}/#handoff=${encoded}`);
+    } catch (err) {
+      setStatus('Could not prepare your text.', true);
+    }
+  });
+
+  document.querySelector('#quickExample').addEventListener('click', () => {
+    beforeEl.value = 'Payment is due within 30 days of the invoice date.\nLate payments accrue interest at 1% per month.\nEither party may terminate with 60 days notice.';
+    afterEl.value = 'Payment is due within 15 days of the invoice date.\nLate payments accrue interest at 2% per month.\nEither party may terminate with 30 days written notice.';
+    setStatus('');
+  });
+  document.querySelector('#quickClear').addEventListener('click', () => {
+    beforeEl.value = '';
+    afterEl.value = '';
+    setStatus('');
+    beforeEl.focus();
+  });
+}
