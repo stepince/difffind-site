@@ -32,3 +32,5 @@
 .hero-full .quick-diff{margin:0 12px 14px;padding:16px 14px}.hero-full .quick-diff textarea{min-height:clamp(300px,50vh,760px)}
 @media(max-width:900px){.hero-full .quick-diff{margin-inline:10px}}
 @media(max-width:650px){.hero-full .quick-diff{margin-inline:8px;padding:14px 10px}.hero-full .quick-diff textarea{min-height:clamp(200px,32vh,320px)}}
+.hero-full .hero-note{font-size:17px;line-height:1.5;color:var(--muted);font-weight:500}
+@media(max-width:650px){.hero-full .hero-note{font-size:15px}}
