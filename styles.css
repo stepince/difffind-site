@@ -36,3 +36,4 @@
 @media(max-width:650px){.hero-full .hero-note{font-size:15px}}
 .hero-full .quick-diff textarea{min-height:clamp(260px,42vh,640px)}
 @media(max-width:650px){.hero-full .quick-diff textarea{min-height:clamp(200px,32vh,320px)}}
+.hero-full .quick-diff-actions{flex-direction:column;justify-content:center;gap:10px;margin-top:18px}.hero-full .quick-diff-actions .button{padding:16px 36px;gap:22px}.hero-full .quick-status:empty{display:none}.hero-full .quick-status{text-align:center}.hero-full .quick-note{text-align:center}
