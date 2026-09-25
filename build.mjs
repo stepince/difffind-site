@@ -35,5 +35,7 @@ for (const file of ['index.html', 'privacy.html', 'terms.html', 'self-hosted.htm
 // pulling in a CSS minifier for a file that's already compact.
 await cp('styles.css', 'dist/styles.css');
 await cp('assets', 'dist/assets', { recursive: true });
+await cp('robots.txt', 'dist/robots.txt');
+await cp('sitemap.xml', 'dist/sitemap.xml');
 
 console.log('Built static website in dist/');
