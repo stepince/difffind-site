@@ -41,12 +41,12 @@
     <section class="workflow section"><div class="wrap"><h2>How it works</h2><div class="steps"><article><span>01</span><h3>Add your two XML documents.</h3><p>Paste them, load a file, or bring them in from a URL or cURL command.</p></article><article><span>02</span><h3>Compare the structure.</h3><p>Auto-detect the format or choose XML, then run the comparison.</p></article><article><span>03</span><h3>Review each change.</h3><p>Inspect the added, removed, and modified elements and values.</p></article></div></div></section>
     <section class="wrap section feature-examples"><h2>See an example</h2><p class="example-caption">Illustrative examples of the feature.</p><article class="feature-example"><h3>A revised product record</h3><div class="preview"><div class="diff-grid"><div class="diff-pane"><div class="pane-label">BEFORE</div><pre class="example-text example-code">&lt;product&gt;
   &lt;name&gt;Desk lamp&lt;/name&gt;
-  &lt;price&gt;<d>19.99</d>&lt;/price&gt;
-  &lt;stock&gt;<d>12</d>&lt;/stock&gt;
+  &lt;price&gt;<del>19.99</del>&lt;/price&gt;
+  &lt;stock&gt;<del>12</del>&lt;/stock&gt;
 &lt;/product&gt;</pre></div><div class="diff-pane"><div class="pane-label">AFTER</div><pre class="example-text example-code">&lt;product&gt;
   &lt;name&gt;Desk lamp&lt;/name&gt;
-  &lt;price&gt;<i>24.99</i>&lt;/price&gt;
-  &lt;stock&gt;<i>0</i>&lt;/stock&gt;
+  &lt;price&gt;<ins>24.99</ins>&lt;/price&gt;
+  &lt;stock&gt;<ins>0</ins>&lt;/stock&gt;
 &lt;/product&gt;</pre></div></div><div class="example-note">Red marks removed values; green marks added values. Unhighlighted text is unchanged.</div></div></article></section>
     <section class="wrap feature-usefulness"><h2>Why XML Compare is useful</h2><p>Use XML comparison to review configuration files, data feeds, API payloads, and exported documents.</p><p>Structure-aware comparison helps you focus on the values and elements that changed rather than on the surrounding markup.</p><p>Also compare <a href="/json-compare/">JSON Compare</a>, <a href="/yaml-compare/">YAML Compare</a>, and <a href="/csv-compare/">CSV Compare</a> documents, or start with plain <a href="/text-compare/">Text Compare</a>.</p></section>
     <section class="closing wrap"><div><p class="eyebrow">TRY IT WITH YOUR OWN XML</p><h2>Find what changed in your XML.</h2></div><a class="button" data-app-link href="https://app.difffind.com/">Compare XML →</a></section>

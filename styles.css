@@ -19,3 +19,4 @@
 .feature-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px;margin:28px 0 0;font-size:13px;color:var(--muted)}
 .example-shot{display:block;width:100%;height:auto}
 .feature-menu-links a[href$="#features"]{grid-column:1/-1}.example-code{font:13px/1.9 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre;overflow-x:auto}.footer-nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;padding-block:26px 0;font-size:12px;color:var(--muted)}.footer-nav>span{font-size:10px;font-weight:700;letter-spacing:1.4px;color:#5a6d7e}.footer-nav a:hover{color:var(--blue)}
+.diff-pane pre.example-code{margin:0;font-size:13px;line-height:1.9}

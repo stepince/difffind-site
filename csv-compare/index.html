@@ -40,10 +40,10 @@
     <section class="hero wrap feature-hero"><p class="eyebrow">DIFFFIND FEATURES</p><h1>CSV Compare — Find Changed Rows and Values</h1><p class="hero-copy">Paste two versions of a CSV export and see exactly what changed. DiffFind compares the data as a table, using the header row, so changed values are easy to spot.</p><div class="hero-actions"><a class="button" data-app-link href="https://app.difffind.com/">Try DiffFind</a></div></section>
     <section class="workflow section"><div class="wrap"><h2>How it works</h2><div class="steps"><article><span>01</span><h3>Add your two CSV files.</h3><p>Paste them, load a file, or bring them in from a URL or cURL command.</p></article><article><span>02</span><h3>Compare the data.</h3><p>Auto-detect the format or choose CSV, then run the comparison.</p></article><article><span>03</span><h3>Review each change.</h3><p>Inspect the added, removed, and modified values.</p></article></div></div></section>
     <section class="wrap section feature-examples"><h2>See an example</h2><p class="example-caption">Illustrative examples of the feature.</p><article class="feature-example"><h3>An updated price list</h3><div class="preview"><div class="diff-grid"><div class="diff-pane"><div class="pane-label">BEFORE</div><pre class="example-text example-code">sku,price,stock
-A100,<d>19.99</d>,12
-B200,8.50,<d>40</d></pre></div><div class="diff-pane"><div class="pane-label">AFTER</div><pre class="example-text example-code">sku,price,stock
-A100,<i>24.99</i>,12
-B200,8.50,<i>0</i></pre></div></div><div class="example-note">Red marks removed values; green marks added values. The first row is treated as the header.</div></div></article></section>
+A100,<del>19.99</del>,12
+B200,8.50,<del>40</del></pre></div><div class="diff-pane"><div class="pane-label">AFTER</div><pre class="example-text example-code">sku,price,stock
+A100,<ins>24.99</ins>,12
+B200,8.50,<ins>0</ins></pre></div></div><div class="example-note">Red marks removed values; green marks added values. The first row is treated as the header.</div></div></article></section>
     <section class="wrap feature-usefulness"><h2>Why CSV Compare is useful</h2><p>Use CSV comparison to review exports, price lists, inventory files, and reports that are regenerated and passed around.</p><p>Comparing the data rather than raw lines helps you see which values changed, not just that the file is different.</p><p>Working in Excel? Try <a href="/excel-compare/">Excel Comparison</a>. Also compare <a href="/json-compare/">JSON Compare</a>, <a href="/yaml-compare/">YAML Compare</a>, and <a href="/xml-compare/">XML Compare</a> documents.</p></section>
     <section class="closing wrap"><div><p class="eyebrow">TRY IT WITH YOUR OWN CSV</p><h2>Find what changed in your CSV.</h2></div><a class="button" data-app-link href="https://app.difffind.com/">Compare CSV →</a></section>
   </main>

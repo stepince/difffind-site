@@ -41,12 +41,12 @@
     <section class="workflow section"><div class="wrap"><h2>How it works</h2><div class="steps"><article><span>01</span><h3>Choose cURL as the input type.</h3><p>Pick cURL for the Before and After sides and paste a command for each.</p></article><article><span>02</span><h3>Load and compare.</h3><p>DiffFind sends each request. Then run the comparison.</p></article><article><span>03</span><h3>Review each change.</h3><p>Inspect the differences between the two responses.</p></article></div></div></section>
     <section class="wrap section feature-examples"><h2>See an example</h2><p class="example-caption">Illustrative examples of the feature.</p><article class="feature-example"><h3>The same endpoint before and after a change</h3><div class="preview"><div class="diff-grid"><div class="diff-pane"><div class="pane-label">BEFORE</div><pre class="example-text example-code">{
   "orderId": 8841,
-  "status": "<d>pending</d>",
-  "total": <d>42.00</d>
+  "status": "<del>pending</del>",
+  "total": <del>42.00</del>
 }</pre></div><div class="diff-pane"><div class="pane-label">AFTER</div><pre class="example-text example-code">{
   "orderId": 8841,
-  "status": "<i>paid</i>",
-  "total": <i>45.50</i>
+  "status": "<ins>paid</ins>",
+  "total": <ins>45.50</ins>
 }</pre></div></div><div class="example-note">Illustrative responses to the same request. Red marks removed values; green marks added values.</div></div></article></section>
     <section class="wrap feature-usefulness"><h2>Why cURL Compare is useful</h2><p>Use cURL comparison to test API changes with real requests: authenticated calls, POST bodies, and custom headers included.</p><p>Copy the command you already use, paste it in, and compare the responses instead of diffing them by hand.</p><p>For a plain address, use <a href="/url-compare/">URL Compare</a>. To review saved responses, see <a href="/json-compare/">JSON Compare</a>.</p></section>
     <section class="closing wrap"><div><p class="eyebrow">TRY IT WITH YOUR OWN cURL COMMANDS</p><h2>Compare two cURL commands.</h2></div><a class="button" data-app-link data-app-input="curl" href="https://app.difffind.com/?inputType=curl">Compare cURL →</a></section>
