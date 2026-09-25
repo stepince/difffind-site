@@ -20,3 +20,4 @@
 .example-shot{display:block;width:100%;height:auto}
 .feature-menu-links a[href$="#features"]{grid-column:1/-1}.example-code{font:13px/1.9 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre;overflow-x:auto}.footer-nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;padding-block:26px 0;font-size:12px;color:var(--muted)}.footer-nav>span{font-size:10px;font-weight:700;letter-spacing:1.4px;color:#5a6d7e}.footer-nav a:hover{color:var(--blue)}
 .diff-pane pre.example-code{margin:0;font-size:13px;line-height:1.9}
+.dh-banner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 16px;padding:14px 20px;background:#0f172a;color:#f1f5f9;font-size:14px;line-height:1.4;text-align:center}.dh-banner p{margin:0}.dh-banner a{font-weight:500;color:#f8fafc}.dh-banner a:hover{text-decoration:underline}
