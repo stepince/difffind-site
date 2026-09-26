@@ -113,6 +113,32 @@ if (quickForm) {
     }
   });
 
+  // Fit the text boxes to the window so the whole form (button included)
+  // ends at the bottom of the first screen. Desktop/tablet only: on phones
+  // the on-screen keyboard resizes the viewport and would shrink the boxes
+  // while typing, so they keep the fixed CSS height there.
+  const phoneQuery = window.matchMedia('(max-width: 650px)');
+  const MIN_BOX_HEIGHT = 220;
+  const MAX_BOX_HEIGHT = 900;
+  const fitQuickDiff = () => {
+    quickForm.style.removeProperty('--qd-box-h');
+    if (phoneQuery.matches) return;
+    const formTop = quickForm.getBoundingClientRect().top + window.scrollY;
+    const chrome = quickForm.offsetHeight - beforeEl.offsetHeight;
+    const available = window.innerHeight - formTop - chrome - 16;
+    const height = Math.max(MIN_BOX_HEIGHT, Math.min(MAX_BOX_HEIGHT, Math.floor(available)));
+    quickForm.style.setProperty('--qd-box-h', `${height}px`);
+  };
+  let fitFrame = 0;
+  const scheduleFit = () => {
+    cancelAnimationFrame(fitFrame);
+    fitFrame = requestAnimationFrame(fitQuickDiff);
+  };
+  window.addEventListener('resize', scheduleFit);
+  window.addEventListener('load', scheduleFit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleFit);
+  fitQuickDiff();
+
   document.querySelector('#quickExample').addEventListener('click', () => {
     beforeEl.value = 'Payment is due within 30 days of the invoice date.\nLate payments accrue interest at 1% per month.\nEither party may terminate with 60 days notice.';
     afterEl.value = 'Payment is due within 15 days of the invoice date.\nLate payments accrue interest at 2% per month.\nEither party may terminate with 30 days written notice.';
