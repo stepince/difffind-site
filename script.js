@@ -125,3 +125,19 @@ if (quickForm) {
     beforeEl.focus();
   });
 }
+
+// Measure document position, not scroll position: scrolling must never resize
+// the editors. Observe only the content above the form to avoid resize loops.
+if (quickForm) {
+  const updateQuickFormTop = () => {
+    const top = quickForm.getBoundingClientRect().top + window.scrollY;
+    quickForm.style.setProperty('--quick-form-top', `${Math.ceil(top)}px`);
+  };
+  updateQuickFormTop();
+  window.addEventListener('resize', updateQuickFormTop);
+  if (typeof ResizeObserver !== 'undefined') {
+    const observer = new ResizeObserver(updateQuickFormTop);
+    document.querySelectorAll('.dh-banner, .header, .hero-head').forEach(el => observer.observe(el));
+  }
+  if (document.fonts) document.fonts.ready.then(updateQuickFormTop);
+}
