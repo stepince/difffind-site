@@ -129,7 +129,7 @@ if (quickForm) {
   measureQuickOffset();
   if (typeof ResizeObserver === 'function') {
     const observer = new ResizeObserver(measureQuickOffset);
-    ['.dh-banner', '.header', '.hero-head', '.quick-diff-head', '.quick-diff-actions', '.quick-note']
+    ['.header','.hero-head', '.quick-diff-head', '.quick-diff-actions', '.quick-note']
       .map(selector => document.querySelector(selector))
       .filter(Boolean)
       .forEach(element => observer.observe(element));
@@ -160,7 +160,7 @@ if (quickForm) {
   window.addEventListener('resize', updateQuickFormTop);
   if (typeof ResizeObserver !== 'undefined') {
     const observer = new ResizeObserver(updateQuickFormTop);
-    document.querySelectorAll('.dh-banner, .header, .hero-head').forEach(el => observer.observe(el));
+    document.querySelectorAll('.header, .hero-head').forEach(el => observer.observe(el));
   }
   if (document.fonts) document.fonts.ready.then(updateQuickFormTop);
 }
