@@ -113,31 +113,28 @@ if (quickForm) {
     }
   });
 
-  // Fit the text boxes to the window so the whole form (button included)
-  // ends at the bottom of the first screen. Desktop/tablet only: on phones
-  // the on-screen keyboard resizes the viewport and would shrink the boxes
-  // while typing, so they keep the fixed CSS height there.
-  const phoneQuery = window.matchMedia('(max-width: 650px)');
-  const MIN_BOX_HEIGHT = 220;
-  const MAX_BOX_HEIGHT = 900;
-  const fitQuickDiff = () => {
-    quickForm.style.removeProperty('--qd-box-h');
-    if (phoneQuery.matches) return;
-    const formTop = quickForm.getBoundingClientRect().top + window.scrollY;
+  // Fit the text boxes to the window: CSS sizes them as 100dvh minus
+  // --qd-offset (everything above the boxes plus the form's own chrome), so
+  // resizing the window is handled natively by the browser with no script
+  // lag. JS only measures that offset, and re-measures whenever something
+  // that affects it changes size (fonts loading, header/banner wrapping, a
+  // status message appearing). ResizeObserver callbacks run before paint, so
+  // there is no visible jump. Phones keep a fixed CSS height (the on-screen
+  // keyboard would otherwise shrink the boxes while typing).
+  const measureQuickOffset = () => {
+    const top = quickForm.getBoundingClientRect().top + window.scrollY;
     const chrome = quickForm.offsetHeight - beforeEl.offsetHeight;
-    const available = window.innerHeight - formTop - chrome - 16;
-    const height = Math.max(MIN_BOX_HEIGHT, Math.min(MAX_BOX_HEIGHT, Math.floor(available)));
-    quickForm.style.setProperty('--qd-box-h', `${height}px`);
+    quickForm.style.setProperty('--qd-offset', `${Math.ceil(top + chrome + 16)}px`);
   };
-  let fitFrame = 0;
-  const scheduleFit = () => {
-    cancelAnimationFrame(fitFrame);
-    fitFrame = requestAnimationFrame(fitQuickDiff);
-  };
-  window.addEventListener('resize', scheduleFit);
-  window.addEventListener('load', scheduleFit);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleFit);
-  fitQuickDiff();
+  measureQuickOffset();
+  if (typeof ResizeObserver === 'function') {
+    const observer = new ResizeObserver(measureQuickOffset);
+    ['.dh-banner', '.header', '.hero-head', '.quick-diff-head', '.quick-diff-actions', '.quick-note']
+      .map(selector => document.querySelector(selector))
+      .filter(Boolean)
+      .forEach(element => observer.observe(element));
+  }
+  window.addEventListener('load', measureQuickOffset);
 
   document.querySelector('#quickExample').addEventListener('click', () => {
     beforeEl.value = 'Payment is due within 30 days of the invoice date.\nLate payments accrue interest at 1% per month.\nEither party may terminate with 60 days notice.';
