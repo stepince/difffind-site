@@ -56,3 +56,5 @@
 @media(min-width:651px) and (max-height:900px){.header{min-height:80px}}
 @media(min-width:651px){.hero-full .quick-diff textarea{min-height:220px;height:clamp(220px,calc(100dvh - var(--qd-offset,520px)),900px)}}
 @media(min-width:651px) and (max-height:800px){.hero-full .hero-copy{display:none}.hero-full h1{font-size:clamp(30px,min(4.5vw,5.5vh),64px)}}
+
+.feature-links-label{flex-basis:100%}
