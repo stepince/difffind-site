@@ -37,5 +37,7 @@ await cp('styles.css', 'dist/styles.css');
 await cp('assets', 'dist/assets', { recursive: true });
 await cp('robots.txt', 'dist/robots.txt');
 await cp('sitemap.xml', 'dist/sitemap.xml');
+// IndexNow ownership key: must be served at the site root as <key>.txt
+await cp('426b9da4c128402783383caa54679d03.txt', 'dist/426b9da4c128402783383caa54679d03.txt');
 
 console.log('Built static website in dist/');

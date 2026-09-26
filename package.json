@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": { "dev": "node server.mjs", "start": "node server.mjs", "build": "node build.mjs" },
+  "scripts": { "dev": "node server.mjs", "start": "node server.mjs", "build": "node build.mjs", "indexnow": "node indexnow.mjs" },
   "engines": { "node": ">=18" },
   "devDependencies": {
     "html-minifier-terser": "^7.2.0",
