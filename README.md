@@ -24,7 +24,7 @@ Brand assets are cropped from the supplied `ChatGPT Image Sep 19, 2026, 02_56_52
 
 ## Feature pages
 
-`/text-compare/`, `/semantic-diff/`, `/semantic-search/`, `/pdf-compare/`, `/excel-compare/`, `/json-compare/`, `/yaml-compare/`, `/xml-compare/`, `/csv-compare/`, `/url-compare/`, and `/curl-compare/`, `/document-compare/`, `/semantic-document-search/`, and `/diffchecker-alternative/` are static directory-index pages. The local server also accepts each route without a trailing slash. Static hosts should serve directory indexes (and normally redirect to the trailing slash). Canonical URLs use the production domain in `CNAME`; update the feature-page canonical links if that domain changes. Shared styles, navigation behavior, and application links use `styles.css` and `script.js`. No analytics provider is configured.
+`/text-compare/`, `/semantic-diff/`, `/semantic-search/`, `/pdf-compare/`, `/excel-compare/`, `/word-compare/`, `/json-compare/`, `/yaml-compare/`, `/xml-compare/`, `/csv-compare/`, `/url-compare/`, and `/curl-compare/`, `/document-compare/`, `/semantic-document-search/`, and `/diffchecker-alternative/` are static directory-index pages. The local server also accepts each route without a trailing slash. Static hosts should serve directory indexes (and normally redirect to the trailing slash). Canonical URLs use the production domain in `CNAME`; update the feature-page canonical links if that domain changes. Shared styles, navigation behavior, and application links use `styles.css` and `script.js`. No analytics provider is configured.
 
 ## Quick text compare (homepage → app handoff)
 
