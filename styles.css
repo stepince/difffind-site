@@ -77,3 +77,12 @@
 .faq-item h3{font-size:16px}
 .faq-item p{font-size:14px;line-height:1.8;color:var(--muted);margin:0}
 @media(max-width:650px){.takeaway-grid,.faq-list{grid-template-columns:1fr;gap:20px}}
+.related-card{display:flex;align-items:center;justify-content:space-between;gap:32px;border:1px solid var(--line);border-radius:10px;padding:28px 32px;margin:0 auto 56px;background:#f7f9fc}
+.related-card h2{font-size:20px;margin:0 0 10px}
+.related-card .eyebrow{margin-bottom:8px}
+.related-card p:not(.eyebrow){font-size:14px;line-height:1.8;color:var(--muted);margin:0 0 8px;max-width:640px}
+.related-card .button{flex-shrink:0}
+.related-note{font-size:14px;line-height:1.8;color:var(--muted);margin:24px 0 0;padding-top:16px;border-top:1px solid var(--line)}
+.related-tools{text-align:center;font-size:12px;color:var(--muted);margin:0 auto 20px}
+.related-tools a{color:inherit;font-weight:600;text-decoration:underline}
+@media(max-width:650px){.related-card{flex-direction:column;align-items:flex-start;gap:18px;padding:22px 20px}}
