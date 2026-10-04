@@ -57,3 +57,23 @@
 @media(min-width:651px) and (max-height:800px){.hero-full .hero-copy{display:none}.hero-full h1{font-size:clamp(30px,min(4.5vw,5.5vh),64px)}}
 
 .feature-links-label{flex-basis:100%}
+.eyebrow,.formats>span{text-transform:uppercase}
+.steps{list-style:none;padding:0;margin-bottom:0}
+.steps li{display:block}
+.steps-note,.dev-refs{font-size:13px;color:var(--muted);margin:24px 0 0}
+.text-link.inline{display:inline;font-size:inherit;text-decoration:underline}
+.takeaways{padding-block:48px 8px}
+.takeaway-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.takeaways h2,.faq-item h3{margin:0 0 14px}
+.takeaways h2{font-size:20px}
+.check-list,.format-list{list-style:none;margin:0;padding:0;font-size:14px;line-height:1.7;color:var(--muted)}
+.check-list li{padding:0 0 8px 22px;position:relative}
+.check-list li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+.format-list{display:flex;flex-wrap:wrap;gap:8px}
+.format-list a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none}
+.format-list a:hover{color:var(--blue);border-color:var(--blue)}
+.faq-list{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.faq-item{border:1px solid var(--line);border-radius:10px;padding:22px 24px;background:linear-gradient(#fff,#fcfdfe)}
+.faq-item h3{font-size:16px}
+.faq-item p{font-size:14px;line-height:1.8;color:var(--muted);margin:0}
+@media(max-width:650px){.takeaway-grid,.faq-list{grid-template-columns:1fr;gap:20px}}
