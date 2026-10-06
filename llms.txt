@@ -1,0 +1,22 @@
+# DiffFind
+
+> AI Document & Text Comparison. See what changed — and understand what it means. DiffFind combines deterministic lexical comparison with AI-powered semantic analysis to compare text, documents, PDFs, structured data, and API requests. Deterministic comparison shows what changed; AI helps explain what it means.
+
+## Compare
+- [AI Document Comparison](https://difffind.com/document-compare/): compare documents with AI
+- [Text Compare](https://difffind.com/text-compare/): AI text comparison and text diff
+- [Semantic Diff](https://difffind.com/semantic-diff/): AI diff tool that compares meaning
+- [PDF Comparison](https://difffind.com/pdf-compare/)
+- [Word Comparison](https://difffind.com/word-compare/)
+- [Excel Comparison](https://difffind.com/excel-compare/): XLS and XLSX
+- [JSON Compare](https://difffind.com/json-compare/), [YAML Compare](https://difffind.com/yaml-compare/), [XML Compare](https://difffind.com/xml-compare/), [CSV Compare](https://difffind.com/csv-compare/)
+- [API Compare](https://difffind.com/api-compare/), [URL Compare](https://difffind.com/url-compare/), [cURL Compare](https://difffind.com/curl-compare/)
+
+## Semantic Find (search by meaning)
+- [Semantic Search](https://difffind.com/semantic-search/)
+- [Semantic Document Search](https://difffind.com/semantic-document-search/)
+
+## More
+- [Diffchecker Alternative](https://difffind.com/diffchecker-alternative/)
+- [DiffFind Launcher Chrome extension](https://difffind.com/chrome-extension/)
+- [OpenAPI specification](https://app.difffind.com/openapi.json)
