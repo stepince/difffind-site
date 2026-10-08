@@ -25,11 +25,11 @@ document.querySelectorAll('[data-api-link]').forEach(link => { link.href = `${AP
 // `tag: null` follows the repo's latest release; set e.g. 'v0.1.0' to pin one.
 const DESKTOP_RELEASE = {
   repo: 'https://github.com/support-difffind/difffind-support',
-  tag: 'v0.1.0',
+  tag: null,
   assets: {
-    'mac-arm64': { file: 'DiffFind-mac-arm64.dmg', available: true },
-    'mac-x64': { file: 'DiffFind-mac-x64.dmg', available: true },
-    'windows-x64': { file: 'DiffFind-windows-x64.exe', available: true },
+    'mac-arm64': { file: 'DiffFind-mac-arm64.dmg', available: false },
+    'mac-x64': { file: 'DiffFind-mac-x64.dmg', available: false },
+    'windows-x64': { file: 'DiffFind-windows-x64.exe', available: false },
   },
 };
 const releaseBase = `${DESKTOP_RELEASE.repo}/releases/${DESKTOP_RELEASE.tag ? `download/${DESKTOP_RELEASE.tag}` : 'latest/download'}`;
