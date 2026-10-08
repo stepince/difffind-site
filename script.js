@@ -19,6 +19,33 @@ document.querySelectorAll('[data-app-link]').forEach(link => {
   link.target = APP_WINDOW_TARGET;
 });
 document.querySelectorAll('[data-api-link]').forEach(link => { link.href = `${APP_URL}/openapi.json`; link.target = APP_WINDOW_TARGET; });
+// Desktop installers are distributed through GitHub Releases. Flip `available`
+// to true per asset once that file is published in the release; until then the
+// download page shows "Coming Soon" instead of a link that would 404.
+// `tag: null` follows the repo's latest release; set e.g. 'v0.1.0' to pin one.
+const DESKTOP_RELEASE = {
+  repo: 'https://github.com/support-difffind/difffind-support',
+  tag: null,
+  assets: {
+    'mac-arm64': { file: 'DiffFind-mac-arm64.dmg', available: false },
+    'mac-x64': { file: 'DiffFind-mac-x64.dmg', available: false },
+    'windows-x64': { file: 'DiffFind-windows-x64.exe', available: false },
+  },
+};
+const releaseBase = `${DESKTOP_RELEASE.repo}/releases/${DESKTOP_RELEASE.tag ? `download/${DESKTOP_RELEASE.tag}` : 'latest/download'}`;
+document.querySelectorAll('[data-download]').forEach(link => {
+  const asset = DESKTOP_RELEASE.assets[link.dataset.download];
+  if (!asset || !asset.available) return;
+  link.href = `${releaseBase}/${asset.file}`;
+  link.removeAttribute('aria-disabled');
+  link.removeAttribute('tabindex');
+  link.textContent = link.dataset.label;
+  const status = link.parentElement.querySelector('[data-download-status]');
+  if (status) status.remove();
+});
+document.querySelectorAll('[data-release-link]').forEach(link => {
+  if (Object.values(DESKTOP_RELEASE.assets).some(a => a.available)) { link.href = `${DESKTOP_RELEASE.repo}/releases`; link.hidden = false; }
+});
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 // Ping the app so it's already awake (Fly.io auto-stops on idle) by the

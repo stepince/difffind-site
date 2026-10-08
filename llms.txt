@@ -19,4 +19,6 @@
 ## More
 - [Diffchecker Alternative](https://difffind.com/diffchecker-alternative/)
 - [DiffFind Launcher Chrome extension](https://difffind.com/chrome-extension/)
+- [DiffFind Desktop](https://difffind.com/desktop/): local desktop app for macOS and Windows with a 90-day free Pro trial
+- [Download DiffFind Desktop](https://difffind.com/desktop/download/)
 - [OpenAPI specification](https://app.difffind.com/openapi.json)
