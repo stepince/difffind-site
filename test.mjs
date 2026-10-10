@@ -14,12 +14,12 @@ for (const [file, url] of Object.entries(pages)) {
   assert.ok((await read('sitemap.xml')).includes(`<loc>${url}</loc>`), `${file} sitemap`);
 }
 const dl = await read('desktop/download/index.html');
-for (const label of ['Download for macOS — Apple Silicon', 'Download for macOS — Intel', 'Download for Windows — 64-bit']) assert.ok(dl.includes(label), label);
+for (const label of ['Download for macOS — Apple Silicon', 'Download for Windows — 64-bit']) assert.ok(dl.includes(label), label);
 assert.ok(!/href="https:\/\/github\.com[^"]*releases/.test(dl), 'no hard-coded release links in HTML');
 
 const js = await readFile('script.js', 'utf8');
 assert.ok(js.includes('https://github.com/support-difffind/difffind-support'), 'release repo');
-for (const f of ['DiffFind-mac-arm64.dmg', 'DiffFind-mac-x64.dmg', 'DiffFind-windows-x64.exe']) assert.ok(js.includes(f), f);
+for (const f of ['DiffFind-mac-arm64.dmg', 'DiffFind-windows-x64.exe']) assert.ok(js.includes(f), f);
 assert.ok(/available: false/.test(js), 'unpublished assets default to Coming Soon');
 
 const home = await read('index.html');

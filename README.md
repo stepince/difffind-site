@@ -28,7 +28,7 @@ Brand assets are cropped from the supplied `ChatGPT Image Sep 19, 2026, 02_56_52
 
 ## DiffFind Desktop pages
 
-`/desktop/` (landing) and `/desktop/download/` (download buttons). Installers are hosted as GitHub Release assets of `support-difffind/difffind-support`; this site only links to them. Download buttons are driven by `DESKTOP_RELEASE` at the top of `script.js`: each asset has `available: false` until that file is actually published in the release, and unavailable buttons render as a disabled "Coming Soon" button. To go live, upload the assets (`DiffFind-mac-arm64.dmg`, `DiffFind-mac-x64.dmg`, `DiffFind-windows-x64.exe`), set `available: true`, optionally pin `tag`, then `npm run build`. The default (`tag: null`) uses `releases/latest/download/<file>`, which ignores pre-releases.
+`/desktop/` (landing) and `/desktop/download/` (download buttons). Installers are hosted as GitHub Release assets of `support-difffind/difffind-support`; this site only links to them. Download buttons are driven by `DESKTOP_RELEASE` at the top of `script.js`: each asset has `available: false` until that file is actually published in the release, and unavailable buttons render as a disabled "Coming Soon" button. To go live, upload the assets (`DiffFind-mac-arm64.dmg`, `DiffFind-windows-x64.exe`), set `available: true`, optionally pin `tag`, then `npm run build`. The default (`tag: null`) uses `releases/latest/download/<file>`, which ignores pre-releases.
 
 ## Quick text compare (homepage → app handoff)
 

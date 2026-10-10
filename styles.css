@@ -91,7 +91,7 @@
 .hero-cta{margin:0 0 34px;display:flex;justify-content:center}.hero-note{max-width:760px;font-size:13px;line-height:1.7;text-align:center}.hero-head .hero-copy{max-width:760px;margin-inline:auto}.formats{flex-wrap:wrap}.formats>div{word-spacing:6px;line-height:1.8;text-align:center}@media(max-width:650px){.hero-note{font-size:12px}}
 
 .hero-cta{gap:16px;flex-wrap:wrap;align-items:center}.hero-cta .button.light{border-color:var(--line)}
-.download-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:24px 0 20px}
+.download-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:24px 0 20px}
 .download-card{border:1px solid var(--line);border-radius:10px;padding:26px;background:linear-gradient(#fff,#fcfdfe);display:flex;flex-direction:column;gap:10px}
 .download-card h3{margin:0;font-size:18px}.download-card p{margin:0;font-size:13px;line-height:1.8;color:var(--muted)}
 .download-card .button{margin-top:auto;gap:12px;color:#fff;text-decoration:none}

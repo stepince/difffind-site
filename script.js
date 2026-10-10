@@ -28,7 +28,6 @@ const DESKTOP_RELEASE = {
   tag: null,
   assets: {
     'mac-arm64': { file: 'DiffFind-mac-arm64.dmg', available: false },
-    'mac-x64': { file: 'DiffFind-mac-x64.dmg', available: false },
     'windows-x64': { file: 'DiffFind-windows-x64.exe', available: false },
   },
 };
