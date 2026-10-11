@@ -163,8 +163,9 @@ if (quickForm) {
   window.addEventListener('load', measureQuickOffset);
 
   document.querySelector('#quickExample').addEventListener('click', () => {
-    beforeEl.value = 'Payment is due within 30 days of the invoice date.\nLate payments accrue interest at 1% per month.\nEither party may terminate with 60 days notice.';
-    afterEl.value = 'Payment is due within 15 days of the invoice date.\nLate payments accrue interest at 2% per month.\nEither party may terminate with 30 days written notice.';
+    // Feature pages carry their own example in data-example-before/after.
+    beforeEl.value = quickForm.dataset.exampleBefore ?? 'Payment is due within 30 days of the invoice date.\nLate payments accrue interest at 1% per month.\nEither party may terminate with 60 days notice.';
+    afterEl.value = quickForm.dataset.exampleAfter ?? 'Payment is due within 15 days of the invoice date.\nLate payments accrue interest at 2% per month.\nEither party may terminate with 30 days written notice.';
     setStatus('');
   });
   document.querySelector('#quickClear').addEventListener('click', () => {

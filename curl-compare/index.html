@@ -39,67 +39,60 @@
   <main id="main" class="feature-page">
     <section class="hero wrap feature-hero"><p class="eyebrow">DIFFFIND FEATURES</p><h1>cURL Compare — Compare API Requests and Responses from Two curl Commands</h1><p class="hero-copy">Paste two cURL commands and DiffFind runs each request and compares the responses. Copy a command from your terminal or your browser’s developer tools, keep the method, headers, and body, and see exactly what changed. It is curl comparison for API requests and API responses.</p><div class="hero-actions"><a class="button" data-app-link data-app-input="curl" rel="nofollow" href="https://app.difffind.com/?inputType=curl">Try DiffFind</a></div></section>
     <section class="workflow section"><div class="wrap"><h2>How it works</h2><div class="steps"><article><span>01</span><h3>Choose cURL as the input type.</h3><p>Pick cURL for the Before and After sides and paste a command for each.</p></article><article><span>02</span><h3>Load and compare.</h3><p>DiffFind sends each request. Then run the comparison.</p></article><article><span>03</span><h3>Review each change.</h3><p>Inspect the differences between the two responses.</p></article></div></div></section>
-    <section class="wrap section feature-examples"><h2>See an example</h2><p class="example-caption">A live comparison using the DiffFind API.</p><article class="feature-example"><h3>Try it: two curl commands, compared live</h3><div class="preview"><form id="curlDemo" class="curl-demo"><div class="diff-grid"><div class="diff-pane"><div class="pane-label"><span>BEFORE &middot; cURL COMMAND</span></div><textarea id="curlBefore" class="example-text example-code curl-input" rows="3" spellcheck="false" aria-label="Before curl command">curl -X GET "https://jsonplaceholder.typicode.com/todos/1" -H "Accept: application/json"</textarea><div class="pane-label"><span>RESPONSE</span><span id="curlBeforeStatus"></span></div><pre id="curlBeforeOut" class="example-text example-code curl-out" aria-live="polite"></pre></div><div class="diff-pane"><div class="pane-label"><span>AFTER &middot; cURL COMMAND</span></div><textarea id="curlAfter" class="example-text example-code curl-input" rows="3" spellcheck="false" aria-label="After curl command">curl -X GET "https://jsonplaceholder.typicode.com/todos/4" -H "Accept: application/json"</textarea><div class="pane-label"><span>RESPONSE</span><span id="curlAfterStatus"></span></div><pre id="curlAfterOut" class="example-text example-code curl-out" aria-live="polite"></pre></div></div><div class="curl-actions"><button class="button" type="submit" id="curlRun">Load and compare</button><span id="curlMsg" role="status"></span></div><div id="curlChanges" class="curl-changes" hidden></div><div class="example-note">Runs the real DiffFind API: each command is sent to the free <a href="https://jsonplaceholder.typicode.com/" rel="noopener">JSONPlaceholder</a> test API, then the two responses are compared. Edit the commands to try your own. Red marks removed values; green marks added values.</div></form></div></article>
-<style>.curl-input{display:block;width:100%;border:0;border-bottom:1px solid var(--line);resize:vertical;background:#fff;color:var(--ink);font:13px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}.curl-out{min-height:140px}.curl-actions{display:flex;align-items:center;gap:18px;padding:16px 22px;border-top:1px solid var(--line)}.curl-actions button{cursor:pointer}.curl-actions button[disabled]{opacity:.6;cursor:progress}#curlMsg{font-size:13px;color:var(--muted)}#curlMsg.err{color:#a83844}.curl-changes{padding:4px 22px 18px;font-size:13px;line-height:1.8}.curl-changes table{border-collapse:collapse;width:100%}.curl-changes th{text-align:left;font-size:10px;letter-spacing:.8px;color:#677689;font-weight:600;padding:8px 10px 8px 0;border-bottom:1px solid var(--line)}.curl-changes td{padding:8px 10px 8px 0;border-bottom:1px solid #edf0f4;font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}.curl-out .ln{display:block}</style>
+    <section class="wrap section feature-examples"><form class="quick-diff" id="curlDemo" aria-labelledby="curlDemoTitle" data-example-before="curl -X GET &quot;https://jsonplaceholder.typicode.com/todos/1&quot; -H &quot;Accept: application/json&quot;" data-example-after="curl -X GET &quot;https://jsonplaceholder.typicode.com/todos/4&quot; -H &quot;Accept: application/json&quot;">
+        <div class="quick-diff-head"><h2 id="curlDemoTitle">Try a quick cURL compare</h2><span class="quick-diff-tools"><button type="button" class="quick-link" id="curlExample">Load example</button><button type="button" class="quick-link" id="curlClear">Clear</button></span></div>
+        <div class="quick-diff-grid">
+          <label><span class="quick-label"><i class="dot old"></i>BEFORE</span><textarea id="curlBefore" rows="5" spellcheck="false" placeholder="Paste a curl command"></textarea></label>
+          <label><span class="quick-label"><i class="dot new"></i>AFTER</span><textarea id="curlAfter" rows="5" spellcheck="false" placeholder="Paste another curl command"></textarea></label>
+        </div>
+        <div class="quick-diff-actions"><button type="submit" class="button">Load and compare <span aria-hidden="true">&rarr;</span></button><p class="quick-status" id="curlMsg" role="status" aria-live="polite"></p></div>
+        <p class="quick-note">Your commands go to the DiffFind app only when you click Load and compare. The app sends the requests and compares the responses. Nothing is stored on this page.</p>
+      </form>
 <script>
 (function () {
-  var APP = 'https://app.difffind.com';
   var form = document.getElementById('curlDemo');
   if (!form) return;
-  var el = function (id) { return document.getElementById(id); };
-  var msg = el('curlMsg'), run = el('curlRun'), changesEl = el('curlChanges');
-  function post(path, body) {
-    return fetch(APP + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(function (r) {
-      return r.json().then(function (j) { if (!r.ok) throw new Error(j.message || ('HTTP ' + r.status)); return j; });
-    });
+  var APP = ['localhost', '127.0.0.1'].indexOf(location.hostname) >= 0 ? 'http://localhost:3222' : 'https://app.difffind.com';
+  var beforeEl = document.getElementById('curlBefore');
+  var afterEl = document.getElementById('curlAfter');
+  var msg = document.getElementById('curlMsg');
+  function b64url(bytes) {
+    var bin = '';
+    for (var i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   }
-  function render(out, text, changes, side) {
-    out.textContent = '';
-    var keys = {};
-    changes.forEach(function (c) { keys[c.path.split('/').pop()] = true; });
-    text.split('\n').forEach(function (line) {
-      var row = document.createElement('span'); row.className = 'ln';
-      var m = line.match(/^(\s*"([^"]+)":\s*)(.*?)(,?)$/);
-      if (m && keys[m[2]]) {
-        var mark = document.createElement(side === 'before' ? 'del' : 'ins');
-        mark.textContent = m[3];
-        row.append(m[1], mark, m[4]);
-      } else { row.textContent = line; }
-      out.appendChild(row);
-    });
+  async function encode(payload) {
+    var bytes = new TextEncoder().encode(JSON.stringify(payload));
+    if (typeof CompressionStream === 'function') {
+      var stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
+      return 'gz.' + b64url(new Uint8Array(await new Response(stream).arrayBuffer()));
+    }
+    return 'raw.' + b64url(bytes);
   }
-  function fail(text) { msg.textContent = text; msg.className = 'err'; }
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    msg.className = ''; msg.textContent = 'Sending requests\u2026'; run.disabled = true; changesEl.hidden = true;
-    var cmds = [el('curlBefore').value.trim(), el('curlAfter').value.trim()];
-    if (!cmds[0] || !cmds[1]) { run.disabled = false; return fail('Enter a curl command on each side.'); }
-    Promise.all(cmds.map(function (c) { return post('/v1/load', { source: 'curl', command: c }); })).then(function (res) {
-      el('curlBeforeStatus').textContent = 'status ' + res[0].status;
-      el('curlAfterStatus').textContent = 'status ' + res[1].status;
-      var opts = { lexical: true, semantic: false };
-      var fmt = /json/.test(res[0].contentType || '') && /json/.test(res[1].contentType || '') ? 'json' : 'text';
-      opts.format = fmt;
-      return post('/v1/compare', { before: res[0].content, after: res[1].content, options: opts }).then(function (cmp) {
-        var changes = cmp.changes.map(function (c) { return c.lexical; });
-        render(el('curlBeforeOut'), res[0].content, changes, 'before');
-        render(el('curlAfterOut'), res[1].content, changes, 'after');
-        var t = document.createElement('table');
-        t.innerHTML = '<thead><tr><th>PATH</th><th>BEFORE</th><th>AFTER</th></tr></thead>';
-        var tb = document.createElement('tbody');
-        changes.forEach(function (c) {
-          var tr = document.createElement('tr');
-          [c.path || c.type, c.oldValue, c.newValue].forEach(function (v) { var td = document.createElement('td'); td.textContent = v == null ? '' : v; tr.appendChild(td); });
-          tb.appendChild(tr);
-        });
-        t.appendChild(tb); changesEl.textContent = ''; changesEl.appendChild(t); changesEl.hidden = false;
-        msg.textContent = cmp.summary.changes + ' change' + (cmp.summary.changes === 1 ? '' : 's') + ' found.';
-      });
-    }).catch(function (err) {
-      fail('Could not run the comparison (' + err.message + '). Open the app to try it there.');
-    }).then(function () { run.disabled = false; });
+  document.getElementById('curlExample').addEventListener('click', function () {
+    beforeEl.value = form.dataset.exampleBefore;
+    afterEl.value = form.dataset.exampleAfter;
+    msg.textContent = '';
   });
-  form.requestSubmit();
+  document.getElementById('curlClear').addEventListener('click', function () {
+    beforeEl.value = '';
+    afterEl.value = '';
+    msg.textContent = '';
+    beforeEl.focus();
+  });
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    msg.textContent = '';
+    var before = beforeEl.value.trim();
+    var after = afterEl.value.trim();
+    if (!before || !after) { msg.textContent = 'Paste a curl command on each side, or click Load example.'; return; }
+    try {
+      // Fragment, not query string: never sent to a server and cleared by the app once read.
+      window.location.assign(APP + '/#handoff=' + await encode({ v: 1, loader: 'curl', before: before, after: after }));
+    } catch (err) {
+      msg.textContent = 'Could not prepare your commands.';
+    }
+  });
 })();
 </script></section>
     <section class="wrap feature-usefulness"><h2>Why cURL Compare is useful</h2><p>Use cURL comparison to test API changes with real requests: authenticated calls, POST bodies, and custom headers included.</p><p>Copy the command you already use, paste it in, and compare the responses instead of diffing them by hand.</p><p>For a plain address, use <a href="/url-compare/">URL Compare</a>. To review saved responses, see <a href="/json-compare/">JSON Compare</a>.</p><p>cURL comparison lets you compare API requests and responses without leaving your terminal workflow. Paste two curl commands, compare the responses with a deterministic diff, and see <a href="/api-compare/">API Compare</a> for the full picture. For files rather than live responses, try <a href="/document-compare/">Document Comparison</a> or <a href="/semantic-diff/">Semantic Diff</a>.</p></section>
