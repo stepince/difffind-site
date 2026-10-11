@@ -39,15 +39,62 @@
   <main id="main" class="feature-page">
     <section class="hero wrap feature-hero"><p class="eyebrow">DIFFFIND FEATURES</p><h1>URL Compare — Compare Two URLs and API Responses</h1><p class="hero-copy">Enter two URLs and DiffFind loads the content for you, then shows exactly what changed. Compare a staging and a production endpoint, or the same address before and after a release. Compare API responses from two endpoints in one step.</p><div class="hero-actions"><a class="button" data-app-link data-app-input="url" rel="nofollow" href="https://app.difffind.com/?inputType=url">Try DiffFind</a></div></section>
     <section class="workflow section"><div class="wrap"><h2>How it works</h2><div class="steps"><article><span>01</span><h3>Choose URL as the input type.</h3><p>Pick URL for the Before and After sides and enter an address for each.</p></article><article><span>02</span><h3>Load and compare.</h3><p>DiffFind loads the content from each URL. Then run the comparison.</p></article><article><span>03</span><h3>Review each change.</h3><p>Inspect the differences between the two responses.</p></article></div></div></section>
-    <section class="wrap section feature-examples"><h2>See an example</h2><p class="example-caption">Illustrative examples of the feature.</p><article class="feature-example"><h3>Staging versus production</h3><div class="preview"><div class="diff-grid"><div class="diff-pane"><div class="pane-label">BEFORE</div><pre class="example-text example-code">{
-  "status": "ok",
-  "version": <del>"1.4.0"</del>,
-  "maintenance": <del>true</del>
-}</pre></div><div class="diff-pane"><div class="pane-label">AFTER</div><pre class="example-text example-code">{
-  "status": "ok",
-  "version": <ins>"1.5.0"</ins>,
-  "maintenance": <ins>false</ins>
-}</pre></div></div><div class="example-note">Illustrative responses from two endpoints. Red marks removed values; green marks added values.</div></div></article></section>
+    <section class="wrap section feature-examples"><form class="quick-diff" id="curlDemo" aria-labelledby="curlDemoTitle" data-example-before="https://jsonplaceholder.typicode.com/todos/1" data-example-after="https://jsonplaceholder.typicode.com/todos/4">
+        <div class="quick-diff-head"><h2 id="curlDemoTitle">Try a quick URL compare</h2><span class="quick-diff-tools"><button type="button" class="quick-link" id="curlExample">Load example</button><button type="button" class="quick-link" id="curlClear">Clear</button></span></div>
+        <div class="quick-diff-grid">
+          <label><span class="quick-label"><i class="dot old"></i>BEFORE</span><textarea id="curlBefore" rows="3" spellcheck="false" placeholder="Paste a URL, e.g. https://api.example.com/resource"></textarea></label>
+          <label><span class="quick-label"><i class="dot new"></i>AFTER</span><textarea id="curlAfter" rows="3" spellcheck="false" placeholder="Paste another URL"></textarea></label>
+        </div>
+        <div class="quick-diff-actions"><button type="submit" class="button">Load and compare <span aria-hidden="true">&rarr;</span></button><p class="quick-status" id="curlMsg" role="status" aria-live="polite"></p></div>
+        <p class="quick-note">Your URLs go to the DiffFind app only when you click Load and compare. The app fetches both addresses and compares the responses. Nothing is stored on this page.</p>
+      </form>
+<script>
+(function () {
+  var form = document.getElementById('curlDemo');
+  if (!form) return;
+  var APP = ['localhost', '127.0.0.1'].indexOf(location.hostname) >= 0 ? 'http://localhost:3222' : 'https://app.difffind.com';
+  var beforeEl = document.getElementById('curlBefore');
+  var afterEl = document.getElementById('curlAfter');
+  var msg = document.getElementById('curlMsg');
+  function b64url(bytes) {
+    var bin = '';
+    for (var i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+  async function encode(payload) {
+    var bytes = new TextEncoder().encode(JSON.stringify(payload));
+    if (typeof CompressionStream === 'function') {
+      var stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
+      return 'gz.' + b64url(new Uint8Array(await new Response(stream).arrayBuffer()));
+    }
+    return 'raw.' + b64url(bytes);
+  }
+  document.getElementById('curlExample').addEventListener('click', function () {
+    beforeEl.value = form.dataset.exampleBefore;
+    afterEl.value = form.dataset.exampleAfter;
+    msg.textContent = '';
+  });
+  document.getElementById('curlClear').addEventListener('click', function () {
+    beforeEl.value = '';
+    afterEl.value = '';
+    msg.textContent = '';
+    beforeEl.focus();
+  });
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    msg.textContent = '';
+    var before = beforeEl.value.trim();
+    var after = afterEl.value.trim();
+    if (!before || !after) { msg.textContent = 'Paste a URL, e.g. https://api.example.com/resource on each side, or click Load example.'; return; }
+    try {
+      // Fragment, not query string: never sent to a server and cleared by the app once read.
+      window.location.assign(APP + '/#handoff=' + await encode({ v: 1, loader: 'url', before: before, after: after }));
+    } catch (err) {
+      msg.textContent = 'Could not prepare your URLs.';
+    }
+  });
+})();
+</script></section>
     <section class="wrap feature-usefulness"><h2>Why URL Compare is useful</h2><p>Use URL comparison to check a release against the previous version, compare environments, or monitor a page or API response for changes.</p><p>You skip the copy and paste: enter the addresses and compare.</p><p>Need headers, methods, or a request body? Use <a href="/curl-compare/">cURL Compare</a>. Comparing files instead? See <a href="/json-compare/">JSON Compare</a> or <a href="/text-compare/">Text Compare</a>.</p><p>URL comparison is a quick way to compare API responses. The deterministic diff shows exactly what differs, and you can add <a href="/semantic-diff/">semantic comparison</a> when the wording of a response matters. For full requests, see <a href="/api-compare/">API Compare</a>, <a href="/pdf-compare/">PDF Comparison</a>, and <a href="/document-compare/">Document Comparison</a>.</p></section>
     <section class="wrap feature-usefulness"><h2>Prefer to compare on your computer?</h2><p><a href="/desktop/">DiffFind Desktop</a> for macOS and Windows runs locally and includes a 90-day free Pro trial. <a href="/desktop/download/">See the download options</a>.</p></section>
     <section class="closing wrap"><div><p class="eyebrow">TRY IT WITH YOUR OWN URLS</p><h2>Compare two URLs now.</h2></div><a class="button" data-app-link data-app-input="url" rel="nofollow" href="https://app.difffind.com/?inputType=url">Compare URLs →</a></section>
