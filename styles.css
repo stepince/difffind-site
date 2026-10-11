@@ -104,3 +104,4 @@
 .desktop-shot{max-width:960px;margin:32px auto 0;border:1px solid var(--line);border-radius:10px;overflow:hidden}.desktop-shot img{display:block;width:100%;height:auto}
 @media(max-width:900px){.download-grid{grid-template-columns:1fr}.tier-grid{grid-template-columns:1fr}}
 .feature-examples .quick-diff-actions{flex-direction:column;justify-content:center;gap:10px;margin-top:18px}.feature-examples .quick-diff-actions .button{padding:16px 36px;gap:22px}.feature-examples .quick-note{text-align:center}
+.feature-usefulness a .brand-inline{text-decoration:underline}
