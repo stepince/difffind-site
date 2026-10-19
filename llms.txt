@@ -10,7 +10,7 @@
 - [Word Comparison](https://difffind.com/word-compare/)
 - [Excel Comparison](https://difffind.com/excel-compare/): XLS and XLSX
 - [JSON Compare](https://difffind.com/json-compare/), [YAML Compare](https://difffind.com/yaml-compare/), [XML Compare](https://difffind.com/xml-compare/), [CSV Compare](https://difffind.com/csv-compare/)
-- [API Compare](https://difffind.com/api-compare/), [URL Compare](https://difffind.com/url-compare/), [cURL Compare](https://difffind.com/curl-compare/)
+- [API Compare](https://difffind.com/api-compare/), [URL Compare](https://difffind.com/url-compare/), [cURL Compare](https://difffind.com/curl-compare/): compare two cURL commands and their API responses
 
 ## Semantic Find (search by meaning)
 - [Semantic Search](https://difffind.com/semantic-search/)
