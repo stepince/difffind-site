@@ -5,6 +5,7 @@ import { cpSync, mkdtempSync, readFileSync, writeFileSync, rmSync, mkdirSync } f
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { ROOT, makeCtx, generate } from './lib.mjs';
+import { ENABLED } from './config.mjs';
 import { validateSite } from './validate.mjs';
 
 function scratch(enabled) {
@@ -53,7 +54,7 @@ check('wrong selector target is reported', s => s.edit('es/pdf-compare/index.htm
 check('stale generated output is reported', s => s.edit('es/index.html', h => h + '\n<!-- hand edit -->'), /es\/index\.html: is stale or missing/);
 
 test('a second language rolls out with only config, locale and content files', () => {
-  const s = scratch(['es', 'de']);
+  const s = scratch([...ENABLED, 'de']);
   try {
     // Stand-in "German" made from the Spanish files: the engine must not care what the text says.
     cpSync(join(s.root, '_i18n/content/es'), join(s.root, '_i18n/content/de'), { recursive: true });

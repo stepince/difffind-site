@@ -20,7 +20,7 @@ export const LANGUAGES = {
 };
 
 // Weekly rollout switch: one new code per week. English is always published.
-export const ENABLED = ['es'];
+export const ENABLED = ['es', 'pt-br'];
 
 // A language may only be enabled when every one of these pages is translated.
 export const CORE_PAGES = ['home', 'semantic-diff', 'url-compare', 'pdf-compare', 'xml-compare', 'word-compare'];

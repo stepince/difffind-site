@@ -3,43 +3,75 @@
   <url><loc>https://difffind.com/</loc><lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/"/>
   </url>
   <url><loc>https://difffind.com/es/</loc><lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/"/>
+  </url>
+  <url><loc>https://difffind.com/pt-br/</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/"/>
   </url>
   <url><loc>https://difffind.com/text-compare/</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://difffind.com/semantic-diff/</loc><lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/semantic-diff/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/semantic-diff/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/semantic-diff/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/semantic-diff/"/>
   </url>
   <url><loc>https://difffind.com/es/semantic-diff/</loc><lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/semantic-diff/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/semantic-diff/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/semantic-diff/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/semantic-diff/"/>
+  </url>
+  <url><loc>https://difffind.com/pt-br/semantic-diff/</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/semantic-diff/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/semantic-diff/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/semantic-diff/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/semantic-diff/"/>
   </url>
   <url><loc>https://difffind.com/pdf-compare/</loc><lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/pdf-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/pdf-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/pdf-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/pdf-compare/"/>
   </url>
   <url><loc>https://difffind.com/es/pdf-compare/</loc><lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/pdf-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/pdf-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/pdf-compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/pdf-compare/"/>
+  </url>
+  <url><loc>https://difffind.com/pt-br/pdf-compare/</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/pdf-compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/pdf-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/pdf-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/pdf-compare/"/>
   </url>
   <url><loc>https://difffind.com/excel-compare/</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://difffind.com/word-compare/</loc><lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/word-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/word-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/word-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/word-compare/"/>
   </url>
   <url><loc>https://difffind.com/es/word-compare/</loc><lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/word-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/word-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/word-compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/word-compare/"/>
+  </url>
+  <url><loc>https://difffind.com/pt-br/word-compare/</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/word-compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/word-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/word-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/word-compare/"/>
   </url>
   <url><loc>https://difffind.com/json-compare/</loc><lastmod>2026-10-19</lastmod></url>
@@ -47,22 +79,38 @@
   <url><loc>https://difffind.com/xml-compare/</loc><lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/xml-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/xml-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/xml-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/xml-compare/"/>
   </url>
   <url><loc>https://difffind.com/es/xml-compare/</loc><lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/xml-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/xml-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/xml-compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/xml-compare/"/>
+  </url>
+  <url><loc>https://difffind.com/pt-br/xml-compare/</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/xml-compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/xml-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/xml-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/xml-compare/"/>
   </url>
   <url><loc>https://difffind.com/csv-compare/</loc><lastmod>2026-10-06</lastmod></url>
   <url><loc>https://difffind.com/url-compare/</loc><lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/url-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/url-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/url-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/url-compare/"/>
   </url>
   <url><loc>https://difffind.com/es/url-compare/</loc><lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/url-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/url-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/url-compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/url-compare/"/>
+  </url>
+  <url><loc>https://difffind.com/pt-br/url-compare/</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/url-compare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/url-compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/url-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/url-compare/"/>
   </url>
   <url><loc>https://difffind.com/curl-compare/</loc><lastmod>2026-10-19</lastmod></url>

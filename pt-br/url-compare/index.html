@@ -1,0 +1,135 @@
+<!doctype html>
+<!--!
+  Copyright (c) 2026 Stephen Ince
+  All rights reserved.
+
+  This software is licensed for personal and internal use only.
+  See the LICENSE file in the project root for full terms.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare o conteúdo de duas URLs e identifique as diferenças exatas e as relevantes com diff léxico e análise semântica opcional com IA.">
+  <meta name="theme-color" content="#f7fafc">
+  <title>Compare duas URLs online com IA | DiffFind</title>
+  <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://difffind.com/pt-br/url-compare/">
+  <link rel="alternate" hreflang="en" href="https://difffind.com/url-compare/">
+  <link rel="alternate" hreflang="es" href="https://difffind.com/es/url-compare/">
+  <link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/url-compare/">
+  <link rel="alternate" hreflang="x-default" href="https://difffind.com/url-compare/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DiffFind">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:title" content="Compare duas URLs online com IA | DiffFind">
+  <meta property="og:description" content="Compare o conteúdo de duas URLs e identifique as diferenças exatas e as relevantes com diff léxico e análise semântica opcional com IA.">
+  <meta property="og:url" content="https://difffind.com/pt-br/url-compare/">
+  <meta property="og:image" content="https://difffind.com/assets/app-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compare duas URLs online com IA | DiffFind">
+  <meta name="twitter:description" content="Compare o conteúdo de duas URLs e identifique as diferenças exatas e as relevantes com diff léxico e análise semântica opcional com IA.">
+  <meta name="twitter:image" content="https://difffind.com/assets/app-preview.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://difffind.com/pt-br/url-compare/#page","url":"https://difffind.com/pt-br/url-compare/","name":"Compare duas URLs online com IA | DiffFind","description":"Compare o conteúdo de duas URLs e identifique as diferenças exatas e as relevantes com diff léxico e análise semântica opcional com IA.","inLanguage":"pt-BR","isPartOf":{"@id":"https://difffind.com/pt-br/#site"}},{"@type":"SoftwareApplication","@id":"https://difffind.com/pt-br/url-compare/#app","name":"DiffFind Comparar URLs","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://app.difffind.com/","description":"Compare o conteúdo de duas URLs e identifique as diferenças exatas e as relevantes com diff léxico e análise semântica opcional com IA."},{"@type":"FAQPage","@id":"https://difffind.com/pt-br/url-compare/#faq","inLanguage":"pt-BR","mainEntity":[{"@type":"Question","name":"Como comparo duas URLs?","acceptedAnswer":{"@type":"Answer","text":"Informe ou cole a primeira URL no lado Antes e a segunda no lado Depois e, em seguida, carregue e compare. O DiffFind carrega o conteúdo de cada endereço e mostra todas as diferenças entre os dois."}},{"@type":"Question","name":"O DiffFind consegue comparar o conteúdo retornado por duas URLs?","acceptedAnswer":{"@type":"Answer","text":"Sim. O DiffFind carrega o conteúdo de texto que cada URL retorna, como uma resposta de API em JSON, XML ou texto simples, e compara os dois resultados."}},{"@type":"Question","name":"Qual é a diferença entre a comparação de URLs e a de cURL?","acceptedAnswer":{"@type":"Answer","text":"A comparação de URLs recebe dois endereços. A comparação de cURL recebe dois comandos cURL completos, de modo que cada requisição pode ter o próprio método, cabeçalhos e corpo. Use a comparação de cURL quando uma requisição precisar de mais do que um endereço."}},{"@type":"Question","name":"A IA pode explicar as alterações relevantes entre URLs?","acceptedAnswer":{"@type":"Answer","text":"Opcionalmente. A comparação léxica exata sempre vem primeiro e funciona sem IA. Depois, você pode adicionar a análise semântica com IA para explicar o que as alterações significam."}},{"@type":"Question","name":"Posso comparar endpoints de homologação e de produção?","acceptedAnswer":{"@type":"Answer","text":"Sim. Informe a URL de homologação em um lado e a de produção no outro e compare as respostas."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DiffFind","item":"https://difffind.com/pt-br/"},{"@type":"ListItem","position":2,"name":"Comparar URLs","item":"https://difffind.com/pt-br/url-compare/"}]}]}</script>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+  <header class="header wrap">
+    <a href="/pt-br/" aria-label="Página inicial do DiffFind"><img class="wordmark" src="/assets/difffind-wordmark.png" alt="DiffFind — comparação de documentos e textos com IA" width="1184" height="331"></a>
+    <nav aria-label="Navegação principal"><details class="feature-menu"><summary>Recursos</summary><div class="feature-menu-links"><a href="/text-compare/">Comparar texto</a><a href="/pt-br/semantic-diff/">Diff semântico</a><a href="/semantic-search/">Busca semântica</a><a href="/pt-br/pdf-compare/">Comparação de PDF</a><a href="/excel-compare/">Comparação de Excel</a><a href="/pt-br/word-compare/">Comparação de Word</a><a href="/json-compare/">Comparar JSON</a><a href="/yaml-compare/">Comparar YAML</a><a href="/pt-br/xml-compare/">Comparar XML</a><a href="/csv-compare/">Comparar CSV</a><a href="/pt-br/url-compare/">Comparar URLs</a><a href="/curl-compare/">Comparar cURL</a><a href="/document-compare/">Comparação de documentos</a><a href="/semantic-document-search/">Busca semântica em documentos</a><a href="/api-compare/">Comparar APIs</a><a href="/diffchecker-alternative/">Alternativa ao Diffchecker</a><a href="/pt-br/#features">Todos os recursos</a></div></details><a href="/pt-br/#who-its-for">Para quem é</a><a href="/pt-br/#how-it-works">Como funciona</a><a href="/desktop/">Desktop <span class="soon-pill">Em breve</span></a><a href="/self-hosted.html">Hospedagem própria <span class="soon-pill">Em breve</span></a><a href="mailto:contact@difffind.com" target="_blank" title="contact@difffind.com"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 7l10 7 10-7"></path></svg> Contato</a><details class="feature-menu lang-menu"><summary aria-label="Idioma: Português (Brasil)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg> Português (Brasil)</summary><div class="feature-menu-links lang-menu-links"><a href="/url-compare/" lang="en" hreflang="en">English</a><a href="/es/url-compare/" lang="es" hreflang="es">Español</a><a href="/pt-br/url-compare/" lang="pt-BR" hreflang="pt-BR" aria-current="true">Português (Brasil)</a></div></details></nav>
+    <a class="button small light" data-app-link rel="nofollow" href="https://app.difffind.com/">Abrir <span class="brand-inline"><span class="diff-part">Diff</span><span class="find-part">Find</span></span> <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main" class="feature-page">
+<section class="hero wrap feature-hero"><p class="eyebrow">RECURSOS DO <span class="brand-inline"><span class="diff-part">Diff</span><span class="find-part">Find</span></span></p><h1>Compare duas URLs e descubra o que mudou</h1><p class="hero-copy">Informe duas URLs e o <span class="brand-inline"><span class="diff-part">Diff</span><span class="find-part">Find</span></span> carrega o conteúdo de cada endereço e mostra exatamente o que mudou. Use-o para comparar endpoints de API, páginas web e outros conteúdos hospedados baseados em texto, como um endpoint de homologação e um de produção, ou o mesmo endereço antes e depois de uma versão. Precisa de um método, cabeçalhos ou um corpo de requisição? Use a <a href="/curl-compare/">comparação de cURL</a>.</p><div class="hero-actions"><a class="button" data-app-link data-app-input="url" rel="nofollow" href="https://app.difffind.com/?inputType=url">Comparar duas URLs</a></div></section>
+    <section class="workflow section" id="how-it-works"><div class="wrap"><h2>Como comparar duas URLs</h2><ol class="steps"><li><article><span>01</span><h3>Informe ou cole as duas URLs.</h3><p>Escolha URL como tipo de entrada e informe um endereço para o lado Antes e outro para o lado Depois.</p></article></li><li><article><span>02</span><h3>Carregue e revise as diferenças exatas.</h3><p>O <span class="brand-inline"><span class="diff-part">Diff</span><span class="find-part">Find</span></span> carrega o conteúdo de cada endereço. A comparação léxica mostra cada adição, remoção e valor alterado.</p></article></li><li><article><span>03</span><h3>Se quiser, adicione a análise semântica com IA.</h3><p>Peça uma explicação do que as alterações significam. A comparação exata continua sendo a fonte da verdade.</p></article></li></ol></div></section>
+    <section class="wrap section feature-examples"><form class="quick-diff" id="curlDemo" aria-labelledby="curlDemoTitle" data-example-before="https://jsonplaceholder.typicode.com/todos/1" data-example-after="https://jsonplaceholder.typicode.com/todos/4">
+        <div class="quick-diff-head"><h2 id="curlDemoTitle">Experimente uma comparação rápida de URLs</h2><span class="quick-diff-tools"><button type="button" class="quick-link" id="curlExample">Carregar exemplo</button><button type="button" class="quick-link" id="curlClear">Limpar</button></span></div>
+        <div class="quick-diff-grid">
+          <label><span class="quick-label"><i class="dot old"></i>ANTES</span><textarea id="curlBefore" rows="3" spellcheck="false" placeholder="Cole uma URL, por exemplo https://api.example.com/resource"></textarea></label>
+          <label><span class="quick-label"><i class="dot new"></i>DEPOIS</span><textarea id="curlAfter" rows="3" spellcheck="false" placeholder="Cole outra URL"></textarea></label>
+        </div>
+        <div class="quick-diff-actions"><button type="submit" class="button">Carregar e comparar <span aria-hidden="true">&rarr;</span></button><p class="quick-status" id="curlMsg" role="status" aria-live="polite"></p></div>
+        <p class="quick-note">Suas URLs só são enviadas ao aplicativo <span class="brand-inline"><span class="diff-part">Diff</span><span class="find-part">Find</span></span> quando você clica em Carregar e comparar. O aplicativo busca os dois endereços e compara as respostas. Nada é armazenado nesta página. O aplicativo está disponível, por enquanto, apenas em inglês.</p>
+      </form>
+<script>
+(function () {
+  var form = document.getElementById('curlDemo');
+  if (!form) return;
+  var APP = ['localhost', '127.0.0.1'].indexOf(location.hostname) >= 0 ? 'http://localhost:3222' : 'https://app.difffind.com';
+  var beforeEl = document.getElementById('curlBefore');
+  var afterEl = document.getElementById('curlAfter');
+  var msg = document.getElementById('curlMsg');
+  function b64url(bytes) {
+    var bin = '';
+    for (var i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+  async function encode(payload) {
+    var bytes = new TextEncoder().encode(JSON.stringify(payload));
+    if (typeof CompressionStream === 'function') {
+      var stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
+      return 'gz.' + b64url(new Uint8Array(await new Response(stream).arrayBuffer()));
+    }
+    return 'raw.' + b64url(bytes);
+  }
+  document.getElementById('curlExample').addEventListener('click', function () {
+    beforeEl.value = form.dataset.exampleBefore;
+    afterEl.value = form.dataset.exampleAfter;
+    msg.textContent = '';
+  });
+  document.getElementById('curlClear').addEventListener('click', function () {
+    beforeEl.value = '';
+    afterEl.value = '';
+    msg.textContent = '';
+    beforeEl.focus();
+  });
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    msg.textContent = '';
+    var before = beforeEl.value.trim();
+    var after = afterEl.value.trim();
+    if (!before || !after) { msg.textContent = 'Cole uma URL em cada lado, por exemplo https://api.example.com/resource, ou clique em Carregar exemplo.'; return; }
+    try {
+      // Fragment, not query string: never sent to a server and cleared by the app once read.
+      window.location.assign(APP + '/#handoff=' + await encode({ v: 1, loader: 'url', before: before, after: after }));
+    } catch (err) {
+      msg.textContent = 'Não foi possível preparar as suas URLs.';
+    }
+  });
+})();
+</script></section>
+    <section class="wrap feature-usefulness" id="what-you-can-compare"><h2>O que você pode comparar com duas URLs</h2><p>O DiffFind carrega o conteúdo de texto que cada URL retorna, para que você possa comparar:</p><ul class="check-list"><li><strong>Endpoints de API</strong>, como a resposta JSON de um serviço de homologação e de um de produção.</li><li><strong>Páginas web</strong>, comparando o conteúdo que o endereço retorna.</li><li><strong>Conteúdo hospedado baseado em texto</strong>, como feeds XML, arquivos de configuração e documentos de texto simples.</li></ul><p>O endereço precisa ser um que o aplicativo DiffFind consiga carregar. Se uma requisição exigir credenciais ou um método específico, coloque-a em um comando cURL e use a <a href="/curl-compare/">comparação de cURL</a>.</p></section>
+    <section class="wrap feature-usefulness" id="example"><h2>Exemplo: homologação versus produção</h2><p>Este exemplo ilustrativo compara o endpoint de status de um serviço em dois ambientes. As URLs usam o domínio reservado example.com, e as respostas são simplificadas.</p><div class="curl-example"><div><h3>Antes (homologação)</h3><pre class="example-code" tabindex="0">https://staging.example.com/api/status
+
+{
+  &quot;version&quot;: &quot;2.4.1&quot;,
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;featureFlags&quot;: {
+    &quot;newCheckout&quot;: true
+  }
+}</pre></div><div><h3>Depois (produção)</h3><pre class="example-code" tabindex="0">https://www.example.com/api/status
+
+{
+  &quot;version&quot;: &quot;2.4.0&quot;,
+  &quot;status&quot;: &quot;ok&quot;,
+  &quot;featureFlags&quot;: {
+    &quot;newCheckout&quot;: false
+  }
+}</pre></div></div><h3>O que a comparação informa</h3><ul class="check-list"><li><code>version</code> mudou de <code>"2.4.1"</code> para <code>"2.4.0"</code>.</li><li><code>featureFlags.newCheckout</code> mudou de <code>true</code> para <code>false</code>.</li><li><code>status</code> não mudou.</li></ul><p>A análise semântica opcional pode então descrever o impacto, por exemplo, que um recurso habilitado em homologação ainda não está habilitado em produção. Use <strong>Carregar exemplo</strong> no formulário acima para experimentar a comparação com uma API de testes pública.</p><div class="hero-actions mid-cta"><a class="button" data-app-link data-app-input="url" rel="nofollow" href="https://app.difffind.com/?inputType=url">Comparar duas URLs agora</a></div></section>
+    <section class="wrap feature-usefulness" id="url-vs-curl"><h2>Comparação de URLs e comparação de cURL</h2><p><strong>A comparação de URLs</strong> usa dois endereços. É a forma mais rápida de comparar o que cada endereço retorna.</p><p><strong>A comparação de cURL</strong> aceita definições completas de requisições HTTP: um método como POST ou PUT, cabeçalhos e um corpo de requisição. Use-a quando as duas requisições diferirem em mais do que o endereço. Veja como <a href="/curl-compare/">comparar respostas do cURL</a>.</p></section>
+    <section class="wrap feature-usefulness" id="lexical-semantic"><h2>Primeiro as diferenças exatas, depois o significado</h2><p>A comparação léxica identifica adições, remoções e valores alterados exatos e é determinística. A <a href="/pt-br/semantic-diff/">análise semântica</a> opcional a complementa explicando o que as alterações significam. A IA nunca é necessária para comparar duas URLs.</p></section>
+    <section class="wrap feature-usefulness" id="use-cases"><h2>Casos de uso comuns</h2><ul class="check-list"><li>Comparar endpoints de homologação e de produção.</li><li>Verificar um endereço antes e depois de uma versão.</li><li>Comparar a resposta de uma API entre duas versões de um serviço.</li><li>Revisar alterações em uma configuração ou um feed hospedados.</li><li>Comparar respostas estruturadas com <a href="/json-compare/">Comparar JSON</a> ou <a href="/pt-br/xml-compare/">Comparar XML</a> quando você já tem os dados.</li></ul></section>
+    <section class="faq wrap section" id="faq"><h2>Perguntas frequentes</h2><div class="faq-list"><div class="faq-item"><h3>Como comparo duas URLs?</h3><p>Informe ou cole a primeira URL no lado Antes e a segunda no lado Depois e, em seguida, carregue e compare. O DiffFind carrega o conteúdo de cada endereço e mostra todas as diferenças entre os dois.</p></div><div class="faq-item"><h3>O DiffFind consegue comparar o conteúdo retornado por duas URLs?</h3><p>Sim. O DiffFind carrega o conteúdo de texto que cada URL retorna, como uma resposta de API em JSON, XML ou texto simples, e compara os dois resultados.</p></div><div class="faq-item"><h3>Qual é a diferença entre a comparação de URLs e a de cURL?</h3><p>A comparação de URLs recebe dois endereços. A comparação de cURL recebe dois comandos cURL completos, de modo que cada requisição pode ter o próprio método, cabeçalhos e corpo. Use a comparação de cURL quando uma requisição precisar de mais do que um endereço.</p></div><div class="faq-item"><h3>A IA pode explicar as alterações relevantes entre URLs?</h3><p>Opcionalmente. A comparação léxica exata sempre vem primeiro e funciona sem IA. Depois, você pode adicionar a análise semântica com IA para explicar o que as alterações significam.</p></div><div class="faq-item"><h3>Posso comparar endpoints de homologação e de produção?</h3><p>Sim. Informe a URL de homologação em um lado e a de produção no outro e compare as respostas.</p></div></div></section>
+    <section class="wrap feature-usefulness"><h2>Ferramentas relacionadas</h2><p>Para requisições completas, veja <a href="/api-compare/">Comparar APIs</a>. Para comparar arquivos em vez de endereços, experimente <a href="/text-compare/">Comparar texto</a>, a <a href="/pt-br/word-compare/">comparação de documentos do Word</a> ou a <a href="/pt-br/pdf-compare/">comparação de PDF</a>.</p></section>
+    <section class="wrap feature-usefulness"><h2>Prefere comparar no seu computador?</h2><p>O <a href="/desktop/"><span class="brand-inline"><span class="diff-part">Diff</span><span class="find-part">Find</span></span> Desktop</a> para macOS e Windows roda localmente e inclui um teste gratuito do Pro por 90 dias. <a href="/desktop/download/">Veja as opções de download</a>.</p></section>
+    <section class="closing wrap"><div><p class="eyebrow">EXPERIMENTE COM AS SUAS PRÓPRIAS URLS</p><h2>Compare duas URLs agora.</h2></div><a class="button" data-app-link data-app-input="url" rel="nofollow" href="https://app.difffind.com/?inputType=url">Comparar duas URLs →</a></section>
+  </main>
+  <nav class="wrap footer-nav" aria-label="Ferramentas de comparação"><span>COMPARAR</span><a href="/text-compare/">Comparar texto</a><a href="/pt-br/semantic-diff/">Diff semântico</a><a href="/semantic-search/">Busca semântica</a><a href="/pt-br/pdf-compare/">Comparação de PDF</a><a href="/excel-compare/">Comparação de Excel</a><a href="/pt-br/word-compare/">Comparação de Word</a><a href="/json-compare/">Comparar JSON</a><a href="/yaml-compare/">Comparar YAML</a><a href="/pt-br/xml-compare/">Comparar XML</a><a href="/csv-compare/">Comparar CSV</a><a href="/pt-br/url-compare/">Comparar URLs</a><a href="/curl-compare/">Comparar cURL</a><a href="/api-compare/">Comparar APIs</a><a href="/document-compare/">Comparação de documentos</a><a href="/semantic-document-search/">Busca semântica em documentos</a><a href="/diffchecker-alternative/">Alternativa ao Diffchecker</a><a href="/chrome-extension/">Extensão do Chrome</a><a href="/desktop/">Desktop</a></nav>
+  <footer class="wrap"><a href="/pt-br/" aria-label="Voltar ao topo"><img src="/assets/difffind-wordmark.png" alt="DiffFind" width="1184" height="331"></a><p>Compare mais do que texto. Compare o significado.</p><span>© <span id="year">2026</span> <span class="brand-name">DiffFind</span> &middot; <a href="/privacy.html" lang="en" hreflang="en">Privacidade (em inglês)</a> &middot; <a href="/terms.html" lang="en" hreflang="en">Termos (em inglês)</a></span></footer>
+  <p class="wrap app-language-note">O aplicativo DiffFind (app.difffind.com) está disponível, por enquanto, apenas em inglês. Este site também é oferecido em português.</p>
+</body>
+</html>
