@@ -1,0 +1,49 @@
+{
+  "languageLabel": "Idioma",
+  "skip": "Saltar al contenido",
+  "homeAria": "Inicio de DiffFind",
+  "wordmarkAlt": "DiffFind — comparación de documentos y texto con IA",
+  "openApp": "Abrir",
+  "badgesLabel": "Destacado en",
+  "nav": {
+    "aria": "Navegación principal",
+    "features": "Funciones",
+    "allFeatures": "Todas las funciones",
+    "whoItsFor": "Para quién es",
+    "howItWorks": "Cómo funciona",
+    "desktop": "Escritorio",
+    "selfHosted": "Autoalojado",
+    "soon": "Próximamente",
+    "contact": "Contacto"
+  },
+  "tools": {
+    "text-compare": "Comparar texto",
+    "semantic-diff": "Diff semántico",
+    "semantic-search": "Búsqueda semántica",
+    "pdf-compare": "Comparación de PDF",
+    "excel-compare": "Comparación de Excel",
+    "word-compare": "Comparación de Word",
+    "json-compare": "Comparar JSON",
+    "yaml-compare": "Comparar YAML",
+    "xml-compare": "Comparar XML",
+    "csv-compare": "Comparar CSV",
+    "url-compare": "Comparar URL",
+    "curl-compare": "Comparar cURL",
+    "api-compare": "Comparar API",
+    "document-compare": "Comparación de documentos",
+    "semantic-document-search": "Búsqueda semántica en documentos",
+    "diffchecker-alternative": "Alternativa a Diffchecker",
+    "chrome-extension": "Extensión de Chrome",
+    "desktop": "Escritorio"
+  },
+  "footer": {
+    "navAria": "Herramientas de comparación",
+    "compare": "COMPARAR",
+    "tagline": "Compara más que texto. Compara significado.",
+    "privacy": "Privacidad (en inglés)",
+    "terms": "Términos (en inglés)",
+    "backToTop": "Volver arriba",
+    "relatedTools": "Herramientas relacionadas: <a href=\"https://doculocate.com/\">DocuLocate</a> &mdash; búsqueda semántica en documentos",
+    "appNote": "La aplicación DiffFind (app.difffind.com) está disponible por ahora solo en inglés. Este sitio web se ofrece también en español."
+  }
+}

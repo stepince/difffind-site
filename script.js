@@ -94,13 +94,21 @@ if (quickForm) {
   const afterEl = document.querySelector('#quickAfter');
   const statusEl = document.querySelector('#quickStatus');
 
+  // Localized pages supply their own wording through data-* attributes;
+  // the English defaults below apply when none are set.
+  const text = {
+    open: quickForm.dataset.openLabel ?? 'Open DiffFind',
+    empty: quickForm.dataset.msgEmpty ?? 'Paste some text into Before and/or After first.',
+    tooLarge: quickForm.dataset.msgTooLarge ?? 'That much text is too large to carry over. Paste it directly in the app.',
+    failed: quickForm.dataset.msgFailed ?? 'Could not prepare your text.',
+  };
   const setStatus = (message, withAppLink) => {
     statusEl.textContent = message;
     if (withAppLink) {
       statusEl.append(' ');
       const link = document.createElement('a');
       link.href = `${HANDOFF_APP_URL}/`;
-      link.textContent = 'Open DiffFind';
+      link.textContent = text.open;
       statusEl.append(link);
     }
   };
@@ -124,18 +132,18 @@ if (quickForm) {
     const before = beforeEl.value;
     const after = afterEl.value;
     if (!before.trim() && !after.trim()) {
-      setStatus('Paste some text into Before and/or After first.');
+      setStatus(text.empty);
       return;
     }
     try {
       const encoded = await encodeHandoff({ v: 1, before, after });
       if (encoded.length > MAX_FRAGMENT_CHARS) {
-        setStatus('That much text is too large to carry over. Paste it directly in the app.', true);
+        setStatus(text.tooLarge, true);
         return;
       }
       window.location.assign(`${HANDOFF_APP_URL}/#handoff=${encoded}`);
     } catch (err) {
-      setStatus('Could not prepare your text.', true);
+      setStatus(text.failed, true);
     }
   });
 

@@ -1,6 +1,7 @@
 import { mkdir, cp, rm, readFile, writeFile } from 'node:fs/promises';
 import { minify as minifyHtml } from 'html-minifier-terser';
 import { minify as minifyJs } from 'terser';
+import { localizedOutputs } from './_i18n/lib.mjs';
 
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist', { recursive: true });
@@ -15,7 +16,7 @@ const HTML_MINIFY_OPTIONS = {
   minifyJS: true,
 };
 
-for (const file of ['index.html', 'privacy.html', 'terms.html', 'self-hosted.html', 'semantic-diff/index.html', 'semantic-search/index.html', 'semantic-find/index.html', 'text-compare/index.html', 'pdf-compare/index.html', 'excel-compare/index.html', 'word-compare/index.html', 'json-compare/index.html', 'yaml-compare/index.html', 'xml-compare/index.html', 'csv-compare/index.html', 'url-compare/index.html', 'curl-compare/index.html', 'api-compare/index.html', 'document-compare/index.html', 'semantic-document-search/index.html', 'diffchecker-alternative/index.html', 'chrome-extension/index.html', 'desktop/index.html', 'desktop/download/index.html']) {
+for (const file of ['index.html', 'privacy.html', 'terms.html', 'self-hosted.html', 'semantic-diff/index.html', 'semantic-search/index.html', 'semantic-find/index.html', 'text-compare/index.html', 'pdf-compare/index.html', 'excel-compare/index.html', 'word-compare/index.html', 'json-compare/index.html', 'yaml-compare/index.html', 'xml-compare/index.html', 'csv-compare/index.html', 'url-compare/index.html', 'curl-compare/index.html', 'api-compare/index.html', 'document-compare/index.html', 'semantic-document-search/index.html', 'diffchecker-alternative/index.html', 'chrome-extension/index.html', 'desktop/index.html', 'desktop/download/index.html', ...localizedOutputs()]) {
   const source = await readFile(file, 'utf8');
   const minified = await minifyHtml(source, HTML_MINIFY_OPTIONS);
   await mkdir(`dist/${file.slice(0, file.lastIndexOf('/') + 1)}`, { recursive: true });

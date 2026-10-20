@@ -35,3 +35,7 @@ Brand assets are cropped from the supplied `ChatGPT Image Sep 19, 2026, 02_56_52
 The homepage has a Before/After text box. On submit, `script.js` gzips `{v:1, before, after}` (falls back to plain base64url without `CompressionStream`), and navigates the current tab to `https://app.difffind.com/#handoff=<gz|raw>.<base64url>`. The text travels in the URL **fragment**, which browsers never send to a server. The app (`applyHandoffFromUrl` in `mydiffchecker/src/api/routes/ui.route.ts`) reads it, removes it from the address bar, fills the inputs and runs a lexical-only comparison without changing the saved analysis-mode preference. Encoded payloads over 60,000 characters are refused on the site with a message. On `localhost`, the handoff targets a local app on port 3222 (`PORT=3222 npx tsx src/config/server.ts` in `mydiffchecker`). Don't add a query-parameter override for the app URL: it would let a crafted link send typed text to another origin.
 
 The legacy `/semantic-find/` URL redirects to `/semantic-search/`: the development server returns HTTP 301, while the static build provides an immediate HTML redirect with a canonical link. Configure a host-level 301 for the legacy path if your production host supports redirects. Only the new URL appears in the sitemap.
+
+## Languages
+
+English is the default. Spanish lives under `/es/`; `pt-br`, `de`, `fr` and `ja` are prepared but not published. Pages are generated from `_i18n/`; run `npm run i18n` after editing translations and `npm test` before pushing. See `_i18n/README.md` for the weekly rollout steps.

@@ -1,0 +1,163 @@
+<!--meta
+{
+  "title": "Comparación de documentos y texto con IA | DiffFind",
+  "description": "Compara texto, documentos, PDF, API y datos estructurados con un diff determinista y análisis semántico con IA. Mira qué cambió y entiende qué significa.",
+  "appName": "DiffFind",
+  "featureList": [
+    "Comparación de documentos con IA",
+    "Comparación de texto con IA",
+    "Diff léxico determinista",
+    "Comparación semántica",
+    "Semantic Find: búsqueda de documentos por significado",
+    "Comparación de PDF, Word, Excel, JSON, YAML, XML y CSV",
+    "Comparación de solicitudes y respuestas de API, incluido cURL"
+  ],
+  "lastmod": "2026-10-20"
+}
+-->
+    <section class="hero hero-full">
+      <div class="wrap hero-head">
+      <div class="eyebrow"><span class="status-dot"></span> Comparación de documentos y texto con IA</div>
+      <h1>Mira qué cambió &mdash;<br><span>y entiende qué significa.</span></h1>
+      <p class="hero-copy">Compara texto, documentos, PDF, datos estructurados y solicitudes de API con un diff determinista y análisis semántico con IA.</p>
+      <p class="hero-cta"><a class="button" data-app-link rel="nofollow" href="https://app.difffind.com/">Probar DiffFind <span aria-hidden="true">&rarr;</span></a> <a class="button light" href="/desktop/download/">Descargar la app de escritorio</a></p>
+      </div>
+      <form class="quick-diff" id="quickDiff" action="https://app.difffind.com/" method="get" aria-labelledby="quickDiffTitle" data-example-before="El pago vence dentro de los 30 días posteriores a la fecha de la factura.&#10;Los pagos atrasados generan un interés del 1 % mensual.&#10;Cualquiera de las partes puede rescindir el contrato con 60 días de preaviso." data-example-after="El pago vence dentro de los 15 días posteriores a la fecha de la factura.&#10;Los pagos atrasados generan un interés del 2 % mensual.&#10;Cualquiera de las partes puede rescindir el contrato con 30 días de preaviso por escrito." data-open-label="Abrir DiffFind" data-msg-empty="Pega primero algún texto en Antes y/o Después." data-msg-too-large="Es demasiado texto para enviarlo desde aquí. Pégalo directamente en la aplicación." data-msg-failed="No se pudo preparar tu texto.">
+        <div class="quick-diff-head"><h2 id="quickDiffTitle">Prueba una comparación rápida de texto</h2><span class="quick-diff-tools"><button type="button" class="quick-link" id="quickExample">Cargar ejemplo</button><button type="button" class="quick-link" id="quickClear">Borrar</button></span></div>
+        <div class="quick-diff-grid">
+          <label><span class="quick-label"><i class="dot old"></i>ANTES</span><textarea id="quickBefore" rows="8" spellcheck="false" placeholder="Pega el texto original"></textarea></label>
+          <label><span class="quick-label"><i class="dot new"></i>DESPUÉS</span><textarea id="quickAfter" rows="8" spellcheck="false" placeholder="Pega el texto modificado"></textarea></label>
+        </div>
+        <div class="quick-diff-actions"><button type="submit" class="button">Encontrar diferencias <span aria-hidden="true">&rarr;</span></button><p class="quick-status" id="quickStatus" role="status" aria-live="polite"></p></div>
+        <p class="quick-note">Tu texto se envía a la aplicación {{brand}} solo cuando haces clic en Encontrar diferencias. No se guarda nada en esta página. La aplicación está disponible por ahora solo en inglés.</p>
+      </form>
+      <p class="wrap hero-note">Las herramientas de diff tradicionales te dicen qué palabras cambiaron. {{brand}} combina una comparación determinista y precisa con análisis semántico con IA para ayudarte a entender si también cambió el significado.</p>
+      <div class="wrap hero-body">
+      <div class="preview" id="preview">
+        <div class="preview-toolbar"><div class="preview-title"><span class="mini-mark" aria-hidden="true">◧</span> Los cambios pequeños, bien a la vista.</div></div>
+        <div class="preview-media">
+          <img class="preview-screenshot is-active" src="/assets/app-preview.png" alt="Aplicación DiffFind con un resumen de IA sobre un diff en línea de una configuración JSON de URL de seguimiento, con los cambios eliminados, añadidos y movidos resaltados." width="1230" height="601" loading="lazy">
+          <img class="preview-screenshot" src="/assets/app-preview-xlsx.png" alt="Aplicación DiffFind con una comparación Antes/Después de una hoja de cálculo XLS/XLSX de un catálogo de productos, con los precios y el estado de existencias modificados resaltados." width="1382" height="658" loading="lazy">
+          <img class="preview-screenshot" src="/assets/app-preview-pdf.png" alt="Aplicación DiffFind con una comparación con marcas de revisión de un contrato de arrendamiento en PDF, con la renta, las tarifas y las fechas del contrato modificadas resaltadas." width="1367" height="672" loading="lazy">
+          <img class="preview-screenshot" src="/assets/app-preview-semantic-search.png" alt="Búsqueda semántica de DiffFind para «how much is the rent» que resalta la renta mensual en dos PDF de contratos, con resultados de 1.850 $ antes y 1.950 $ después." width="1367" height="670" loading="lazy">
+        </div>
+        <div class="preview-footer"><span><span class="status-dot"></span> Cada diferencia parte de la evidencia de origen.</span> <span>Comparación real, resultados reales.</span></div>
+      </div>
+      <div class="formats"><span>Una herramienta. Muchos formatos.</span><div>Texto <b>·</b> Documentos <b>·</b> PDF <b>·</b> Word <b>·</b> JSON <b>·</b> YAML <b>·</b> XML <b>·</b> CSV <b>·</b> Excel <b>·</b> Solicitudes y respuestas de API <b>·</b> cURL</div></div>
+      </div>
+    </section>
+    <section class="takeaways wrap section" id="key-takeaways">
+      <div class="takeaway-grid">
+        <div>
+          <h2>Ideas clave</h2>
+          <ul class="check-list">
+            <li>Comparación de documentos y texto con IA: compara texto sin formato, documentos, PDF, hojas de cálculo, datos estructurados y respuestas de API.</li>
+            <li>Mira las diferencias exactas por carácter, palabra, oración, línea o párrafo.</li>
+            <li>La comparación determinista muestra qué cambió; el análisis semántico opcional con IA explica qué significa.</li>
+            <li>Busca por significado, no solo por palabras clave, con Semantic Find. Una API REST y cURL permiten automatizar las comparaciones.</li>
+          </ul>
+        </div>
+        <div id="supported-formats">
+          <h2>Formatos compatibles</h2>
+          <ul class="format-list">
+            <li><a href="/text-compare/">Texto sin formato</a></li>
+            <li><a href="/json-compare/">JSON</a></li>
+            <li><a href="/yaml-compare/">YAML</a></li>
+            <li><a href="/xml-compare/">XML</a></li>
+            <li><a href="/csv-compare/">CSV</a></li>
+            <li><a href="/pdf-compare/">PDF</a></li>
+            <li><a href="/excel-compare/">Excel (XLS/XLSX)</a></li>
+            <li><a href="/word-compare/">Word (DOCX)</a></li>
+            <li><a href="/url-compare/">URL</a></li>
+            <li><a href="/curl-compare/">Comandos cURL</a></li>
+            <li><a href="/api-compare/">Solicitudes y respuestas de API</a></li>
+            <li><a href="/document-compare/">Documentos (todos los tipos)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="wrap section" id="what-makes-it-different">
+      <div class="section-heading"><div><p class="eyebrow">Compara más que texto</p><h2>Compara el significado,<br>no solo las palabras.</h2></div><p>La comparación determinista muestra qué cambió.<br>La IA ayuda a explicar qué significa.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon blue" aria-hidden="true">01</span><h3>Lo que quieres.</h3><p>Comparación de documentos y texto con IA: una respuesta clara a «¿qué diferencia hay entre estas dos versiones?» para <a class="text-link inline" href="/text-compare/">texto</a>, <a class="text-link inline" href="/document-compare/">documentos</a> y <a class="text-link inline" href="/pdf-compare/">PDF</a>.</p><span class="card-tag">El objetivo</span></article>
+        <article class="feature-card"><span class="feature-icon green" aria-hidden="true">02</span><h3>Lo que hace {{brand}}.</h3><p>Encuentra las diferencias exactas y las diferencias relevantes, para que una frase reformulada no se confunda con una obligación modificada y un solo número cambiado no pase desapercibido.</p><span class="card-tag">Exacto + relevante</span></article>
+        <article class="feature-card"><span class="feature-icon violet" aria-hidden="true">03</span><h3>Cómo funciona.</h3><p>Una comparación léxica determinista y repetible encuentra todos los cambios. Después, el <a class="text-link inline" href="/semantic-diff/">análisis semántico</a> opcional y la IA evalúan si cambió el significado. La IA complementa el diff preciso; nunca lo reemplaza.</p><span class="card-tag">Determinista + IA</span></article>
+      </div>
+      <p class="feature-links"><span class="feature-links-label">Por qué importa:</span> puedes entender no solo qué cambió, sino qué significan esos cambios. No necesitas saber nada de embeddings, búsqueda semántica ni RAG.</p>
+    </section>
+    <section class="video wrap section" id="demo">
+      <div class="section-heading"><div><p class="eyebrow">Míralo en acción</p><h2>Mira cómo funciona<br>{{brand}}.</h2></div><p>Un recorrido rápido por cómo comparar, explorar y entender los cambios.</p></div>
+      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/HzMidTbD-p8" title="Video de demostración de DiffFind (en inglés)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </section>
+    <section class="features wrap section" id="features">
+      <div class="section-heading"><div><p class="eyebrow">Claridad en cada comparación</p><h2>Mucho más que un muro<br>de rojo y verde.</h2></div><p>Mira las adiciones, las eliminaciones y el texto movido<br>junto con el contexto que los rodea.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon blue" aria-hidden="true">≠</span><h3>Cada diferencia, contabilizada.</h3><p>Compara por carácter, palabra, oración, línea o párrafo. Sigue las adiciones, las eliminaciones y el texto movido sin perder el contexto.</p><span class="card-tag">La precisión, primero</span></article>
+        <article class="feature-card"><span class="feature-icon green" aria-hidden="true">✧</span><h3>Entiende el impacto.</h3><p>El análisis opcional con IA resalta los cambios relevantes y explica su probable impacto. Los datos citados se contrastan con tus documentos de origen y se muestra el estado de verificación.</p><span class="card-tag">Información de IA respaldada por evidencia</span></article>
+        <article class="feature-card"><span class="feature-icon violet" aria-hidden="true">{ }</span><h3>Ve más allá de la superficie.</h3><p>Compara la estructura de JSON, YAML, XML y CSV. Carga PDF locales para ver los cambios resaltados en la página, o bien hojas de cálculo de Excel (XLS/XLSX, los formatos de archivo de Excel) para comparar todas las hojas a la vez.</p><span class="card-tag">Pensado para documentos reales</span></article>
+      </div>
+      <p class="feature-links"><span class="feature-links-label">Explora:</span> <a class="text-link" href="/text-compare/">Comparar texto</a> <a class="text-link" href="/semantic-diff/">Diff semántico</a> <a class="text-link" href="/pdf-compare/">Comparación de PDF</a> <a class="text-link" href="/excel-compare/">Comparación de Excel</a> <a class="text-link" href="/word-compare/">Comparación de Word</a> <a class="text-link" href="/json-compare/">Comparar JSON</a> <a class="text-link" href="/yaml-compare/">Comparar YAML</a> <a class="text-link" href="/xml-compare/">Comparar XML</a> <a class="text-link" href="/csv-compare/">Comparar CSV</a> <a class="text-link" href="/url-compare/">Comparar URL</a> <a class="text-link" href="/curl-compare/">Comparar cURL</a> <a class="text-link" href="/api-compare/">Comparar API</a> <a class="text-link" href="/document-compare/">Comparación de documentos</a> <a class="text-link" href="/diffchecker-alternative/">Alternativa a Diffchecker</a></p>
+    </section>
+    <section class="features wrap section" id="semantic-find">
+      <div class="section-heading"><div><p class="eyebrow">Semantic Find</p><h2>Busca por significado,<br>no solo por palabras clave.</h2></div><p>Búsqueda de documentos con IA que funciona incluso<br>cuando la redacción es distinta.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon green" aria-hidden="true">?</span><h3>Busca en los documentos por significado.</h3><p>Semantic Find entiende la intención de tu búsqueda y puede localizar contenido relevante aunque el documento use una terminología distinta. Pregunta «cuánto es la renta» y encuentra el pasaje que dice «pago mensual del arrendamiento».</p><span class="card-tag">Búsqueda de documentos con IA</span></article>
+        <article class="feature-card"><span class="feature-icon blue" aria-hidden="true">≈</span><h3>Compara las respuestas.</h3><p>Ejecuta la misma <a class="text-link inline" href="/semantic-document-search/">búsqueda semántica en documentos</a> en dos versiones de un documento para ver cómo cambió la respuesta.</p><span class="card-tag">Búsqueda semántica + comparación</span></article>
+        <article class="feature-card"><span class="feature-icon violet" aria-hidden="true">Aa</span><h3>Palabra clave o significado.</h3><p>Usa la coincidencia exacta de palabras clave cuando conoces las palabras, y la <a class="text-link inline" href="/semantic-search/">búsqueda semántica</a> cuando conoces la idea.</p><span class="card-tag">Tú eliges</span></article>
+      </div>
+    </section>
+    <section class="features wrap section" id="who-its-for">
+      <div class="section-heading"><div><p class="eyebrow">Para todo tipo de usuarios</p><h2>No es solo para<br>usuarios avanzados.</h2></div><p>No necesitas ser técnico para ver qué cambió.<br>{{brand}} está pensado para que lo uses a tu manera.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon blue" aria-hidden="true">$</span><h3>Usuarios de negocios.</h3><p>Compara contratos, facturas, presupuestos y documentos de políticas lado a lado, y comprueba exactamente qué condiciones o cifras cambiaron antes de dar tu visto bueno.</p><span class="card-tag">Sin necesidad de formación</span></article>
+        <article class="feature-card"><span class="feature-icon green" aria-hidden="true">◎</span><h3>Usuarios cotidianos.</h3><p>Comprueba qué cambió entre dos borradores de un currículum, un correo o un artículo sin tener que revisar marcas de revisión a mano.</p><span class="card-tag">Solo pega y compara</span></article>
+        <article class="feature-card"><span class="feature-icon violet" aria-hidden="true">{ }</span><h3>Usuarios avanzados y desarrolladores.</h3><p>Ajusta a mano cada opción de comparación, o automatízala por completo con comandos cURL (solicitudes web desde la línea de comandos), una API REST (una API web estándar) y funciones listas para agentes (herramientas que los agentes de IA pueden llamar directamente).</p><span class="card-tag">API incluida</span></article>
+      </div>
+    </section>
+    <section class="workflow section" id="how-it-works"><div class="wrap"><p class="eyebrow">De la diferencia a la comprensión</p><h2>Tu próxima comparación,<br>más sencilla.</h2><ol class="steps"><li><article><span>01</span><h3>Aporta tu antes y tu después.</h3><p>Pega texto, elige un archivo o carga contenido desde una URL o un comando cURL.</p></article></li><li><article><span>02</span><h3>Mira exactamente qué cambió.</h3><p>Elige el formato y las opciones de comparación. Explora las diferencias lado a lado.</p></article></li><li><article><span>03</span><h3>Dale sentido a los cambios.</h3><p>Añade un análisis semántico opcional (análisis de significado basado en IA) para explorar el significado, la gravedad y los datos verificados.</p></article></li></ol><p class="steps-note">Por debajo, {{brand}} usa técnicas consolidadas de comparación de texto; consulta esta <a class="text-link inline" href="https://en.wikipedia.org/wiki/Diff" target="_blank" rel="noopener">descripción general del algoritmo diff</a> (en inglés).</p></div></section>
+    <section class="developers wrap section" id="developers"><div><p class="eyebrow">Para la forma en que construyes</p><h2>El mismo motor.<br>Tu flujo de trabajo.</h2><p>Lleva la comparación precisa a tus propias herramientas con una API REST (una API web estándar) y funciones listas para agentes (herramientas que los agentes de IA pueden llamar directamente). Compara documentos, encuentra cambios relevantes y detecta cambios que rompen la compatibilidad. Compara solicitudes y respuestas de API pasándole un archivo, una URL o un comando cURL &mdash; sin copiar y pegar a mano. Consulta la <a class="text-link inline" href="/api-compare/">comparación de API</a>, cómo <a class="text-link inline" href="/curl-compare/">comparar respuestas de cURL</a> y el <a class="text-link inline" href="/json-compare/">diff de JSON</a>.</p><a class="text-link" data-api-link rel="nofollow" href="https://app.difffind.com/openapi.json">Explora la especificación OpenAPI <span aria-hidden="true">↗</span></a><p class="dev-refs">Referencias: <a class="text-link inline" href="https://spec.openapis.org/oas/latest.html" target="_blank" rel="noopener">estándar de la especificación OpenAPI</a> · <a class="text-link inline" href="https://curl.se/docs/manpage.html" target="_blank" rel="noopener">documentación de cURL</a> (en inglés)</p></div><div class="code-card"><div class="code-heading"><span><i class="dot new"></i> Una solicitud sencilla. Una imagen más clara.</span><span>API REST</span></div><pre><code><span class="code-comment">// POST /v1/compare</span>
+{
+  <span class="code-key">"before"</span>: <span class="code-string">"El pago vence en 30 días."</span>,
+  <span class="code-key">"after"</span>: <span class="code-string">"El pago vence en 15 días."</span>
+}</code></pre><div class="code-bottom">Comparación determinista + análisis de significado con IA opcional</div></div></section>
+    <aside class="related-card wrap" aria-labelledby="desktop-title">
+      <div>
+        <p class="eyebrow">App de escritorio</p>
+        <h2 id="desktop-title">{{brand}} Desktop para macOS y Windows.</h2>
+        <p>Compara texto, documentos y solicitudes de API de forma local, con una prueba Pro gratuita de 90 días y la comparación básica gratis para siempre.</p>
+      </div>
+      <a class="button light" href="/desktop/">Descubre DiffFind Desktop <span aria-hidden="true">&rarr;</span></a>
+    </aside>
+    <aside class="related-card wrap" aria-labelledby="extension-title">
+      <div>
+        <p class="eyebrow">Extensión de Chrome</p>
+        <h2 id="extension-title">Abre {{brand}} con un solo clic.</h2>
+        <p>{{brand}} Launcher añade un botón a la barra de herramientas de Chrome que abre {{brand}} en su propia ventana, como una aplicación, o te devuelve a la que ya tienes abierta.</p>
+      </div>
+      <a class="button light" href="/chrome-extension/">Obtén DiffFind Launcher <span aria-hidden="true">&rarr;</span></a>
+    </aside>
+    <section class="faq wrap section" id="faq">
+      <div class="section-heading"><div><p class="eyebrow">Preguntas frecuentes</p><h2>Preguntas<br>frecuentes.</h2></div><p>Respuestas rápidas sobre privacidad, formatos,<br>análisis con IA y la API.</p></div>
+      <div class="faq-list">
+        <div class="faq-item"><h3>¿Qué es la comparación de documentos con IA?</h3><p>La comparación de documentos con IA encuentra las diferencias exactas entre dos versiones de un documento y luego te ayuda a entender si también cambió el significado. {{brand}} combina una comparación determinista y repetible que muestra qué cambió con un análisis semántico opcional con IA que ayuda a explicar qué significa. Consulta la <a class="text-link inline" href="/document-compare/">comparación de documentos</a> y el <a class="text-link inline" href="/semantic-diff/">diff semántico</a>.</p></div>
+        <div class="faq-item"><h3>¿Puede {{brand}} comparar solicitudes y respuestas de API?</h3><p>Sí. Carga dos URL o dos comandos cURL para comparar respuestas de API, o pega cargas útiles JSON, YAML o XML para comparar solicitudes y respuestas de API por ruta. También puedes automatizar las comparaciones mediante la API REST de {{brand}}. Consulta la <a class="text-link inline" href="/api-compare/">comparación de API</a>, la <a class="text-link inline" href="/curl-compare/">herramienta de comparación de cURL</a> y la <a class="text-link inline" href="/url-compare/">comparación de URL</a>.</p></div>
+        <div class="faq-item"><h3>¿Qué es Semantic Find?</h3><p>Semantic Find te permite buscar en los documentos por significado, no solo por las palabras exactas. Entiende la intención de tu búsqueda y puede localizar pasajes relevantes aunque el documento use una terminología distinta. Consulta la <a class="text-link inline" href="/semantic-search/">búsqueda semántica</a> y la <a class="text-link inline" href="/semantic-document-search/">búsqueda semántica en documentos</a>.</p></div>
+        <div class="faq-item"><h3>¿{{brand}} guarda mis archivos?</h3><p>No de forma predeterminada. El texto que introduces en esta página se envía a la aplicación {{brand}} solo cuando haces clic en Encontrar diferencias, y no se guarda nada en esta página. En la aplicación, el contenido enviado para comparar se procesa para devolver un resultado y no se conserva más allá de lo necesario para ello, salvo que decidas guardarlo, por ejemplo el historial de comparaciones almacenado en tu navegador. Consulta la <a class="text-link inline" href="/privacy.html" lang="en" hreflang="en">política de privacidad</a> (en inglés).</p></div>
+        <div class="faq-item"><h3>¿Qué formatos de archivo admite {{brand}}?</h3><p>{{brand}} compara texto sin formato, JSON, YAML, XML, CSV, PDF, hojas de cálculo de Excel (XLS y XLSX) y documentos de Word (DOCX). También puedes cargar contenido desde una URL o un comando cURL.</p></div>
+        <div class="faq-item"><h3>¿Qué hace el análisis semántico?</h3><p>El análisis semántico es un análisis de significado opcional basado en IA. Resalta los cambios relevantes y explica su probable impacto. Los datos citados se contrastan con tus documentos de origen y se muestra el estado de verificación.</p></div>
+        <div class="faq-item"><h3>¿Necesito IA para comparar documentos?</h3><p>No. La comparación básica es coherente y repetible, y funciona sin IA. El análisis semántico es una capa opcional que puedes añadir cuando quieras entender qué significa un cambio.</p></div>
+        <div class="faq-item"><h3>¿Qué nivel de detalle puede tener una comparación?</h3><p>Puedes comparar por carácter, palabra, oración, línea o párrafo, y ver las adiciones, las eliminaciones y el texto movido junto con el contexto que los rodea.</p></div>
+        <div class="faq-item"><h3>¿Cómo llamo a la API de {{brand}}?</h3><p>Envía una solicitud POST a /v1/compare con tu contenido anterior y posterior (los campos before y after). El formato completo de la solicitud se describe en la especificación OpenAPI en <a class="text-link inline" rel="nofollow" href="https://app.difffind.com/openapi.json">app.difffind.com/openapi.json</a>.</p></div>
+      </div>
+    </section>
+    <section class="closing wrap"><div><p class="eyebrow">La diferencia está en los detalles</p><h2>Descubre lo que te estabas perdiendo.</h2><p>Tus documentos tienen una historia. Mira qué cambió &mdash; y entiende qué significa.</p></div><a class="button light" data-app-link rel="nofollow" href="https://app.difffind.com/">Abrir {{brand}} <span aria-hidden="true">↗</span></a></section>
+    <aside class="related-card wrap" aria-labelledby="doculocate-title">
+      <div>
+        <p class="eyebrow">Herramienta relacionada</p>
+        <h2 id="doculocate-title">¿Necesitas buscar dentro de un documento?</h2>
+        <p>{{brand}} te ayuda a entender qué cambió entre documentos. Cuando necesites encontrar información dentro de un documento, prueba DocuLocate.</p>
+        <p>DocuLocate combina la búsqueda semántica con IA/RAG para encontrar información relevante, generar respuestas, citar la fuente que las respalda y llevarte directamente a la sección pertinente del documento.</p>
+      </div>
+      <a class="button light" href="https://doculocate.com/">Busca en documentos con DocuLocate <span aria-hidden="true">&rarr;</span></a>
+    </aside>
+    <!--@badges-->

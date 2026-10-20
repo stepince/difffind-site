@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": { "dev": "node server.mjs", "start": "node server.mjs", "build": "node build.mjs", "test": "node build.mjs && node test.mjs", "indexnow": "node indexnow.mjs" },
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node build.mjs",
+    "i18n": "node _i18n/build.mjs",
+    "i18n:check": "node _i18n/build.mjs --check",
+    "test": "node _i18n/build.mjs --check && node build.mjs && node test.mjs && node --test _i18n/validate.test.mjs && node _i18n/validate.mjs",
+    "indexnow": "node indexnow.mjs"
+  },
   "engines": { "node": ">=18" },
   "devDependencies": {
     "html-minifier-terser": "^7.2.0",
