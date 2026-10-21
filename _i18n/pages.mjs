@@ -22,10 +22,10 @@ export const PAGES = [
   feature('document-compare', '2026-10-06'),
   feature('semantic-document-search', '2026-10-06'),
   feature('diffchecker-alternative', '2026-10-06'),
-  { key: 'self-hosted', path: '/self-hosted.html', source: 'self-hosted.html', lastmod: '2026-10-04', mainClass: '', sitemap: true },
+  { key: 'self-hosted', path: '/self-hosted.html', source: 'self-hosted.html', lastmod: '2026-10-21', mainClass: '', sitemap: true },
   feature('chrome-extension', '2026-10-06'),
   { key: 'desktop', path: '/desktop/', source: 'desktop/index.html', lastmod: '2026-10-08', mainClass: '', sitemap: true },
-  { key: 'desktop-download', path: '/desktop/download/', source: 'desktop/download/index.html', lastmod: '2026-10-08', mainClass: '', sitemap: true },
+  { key: 'desktop-download', path: '/desktop/download/', source: 'desktop/download/index.html', lastmod: '2026-10-21', mainClass: '', sitemap: true },
   // Legal pages: English only, not in the sitemap, but they still get the language selector.
   { key: 'privacy', path: '/privacy.html', source: 'privacy.html', mainClass: '', sitemap: false },
   { key: 'terms', path: '/terms.html', source: 'terms.html', mainClass: '', sitemap: false },
