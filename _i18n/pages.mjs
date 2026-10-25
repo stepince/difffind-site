@@ -5,7 +5,7 @@
 const feature = (slug, lastmod, extra = {}) => ({ key: slug, path: `/${slug}/`, source: `${slug}/index.html`, lastmod, mainClass: 'feature-page', sitemap: true, ...extra });
 
 export const PAGES = [
-  { key: 'home', path: '/', source: 'index.html', lastmod: '2026-10-19', mainClass: '', sitemap: true },
+  { key: 'home', path: '/', source: 'index.html', lastmod: '2026-10-25', mainClass: '', sitemap: true },
   feature('text-compare', '2026-10-19'),
   feature('semantic-diff', '2026-10-19'),
   feature('pdf-compare', '2026-10-19', { ogImage: 'assets/app-preview-pdf.png' }),
@@ -24,7 +24,7 @@ export const PAGES = [
   feature('diffchecker-alternative', '2026-10-06'),
   { key: 'self-hosted', path: '/self-hosted.html', source: 'self-hosted.html', lastmod: '2026-10-21', mainClass: '', sitemap: true },
   feature('chrome-extension', '2026-10-06'),
-  { key: 'desktop', path: '/desktop/', source: 'desktop/index.html', lastmod: '2026-10-08', mainClass: '', sitemap: true },
+  { key: 'desktop', path: '/desktop/', source: 'desktop/index.html', lastmod: '2026-10-25', mainClass: '', sitemap: true },
   { key: 'desktop-download', path: '/desktop/download/', source: 'desktop/download/index.html', lastmod: '2026-10-21', mainClass: '', sitemap: true },
   // Legal pages: English only, not in the sitemap, but they still get the language selector.
   { key: 'privacy', path: '/privacy.html', source: 'privacy.html', mainClass: '', sitemap: false },

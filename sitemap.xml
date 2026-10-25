@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://difffind.com/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://difffind.com/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/"/>
   </url>
-  <url><loc>https://difffind.com/es/</loc><lastmod>2026-10-20</lastmod>
+  <url><loc>https://difffind.com/es/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/"/>
   </url>
-  <url><loc>https://difffind.com/pt-br/</loc><lastmod>2026-10-20</lastmod>
+  <url><loc>https://difffind.com/pt-br/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/"/>
@@ -121,6 +121,6 @@
   <url><loc>https://difffind.com/diffchecker-alternative/</loc><lastmod>2026-10-06</lastmod></url>
   <url><loc>https://difffind.com/self-hosted.html</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://difffind.com/chrome-extension/</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://difffind.com/desktop/</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://difffind.com/desktop/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://difffind.com/desktop/download/</loc><lastmod>2026-10-21</lastmod></url>
 </urlset>
