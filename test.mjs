@@ -23,7 +23,7 @@ for (const f of ['DiffFind-mac-arm64.dmg', 'DiffFind-windows-x64.exe']) assert.o
 assert.ok(/available: false/.test(js), 'unpublished assets default to Coming Soon');
 
 const home = await read('index.html');
-assert.ok(home.includes('href="/desktop/download/"') && home.includes('Download Desktop App'), 'home desktop CTA');
+assert.ok(!home.includes('Download Desktop App'), 'home has no desktop download CTA');
 assert.ok(home.includes('Try DiffFind') && home.includes('data-app-link'), 'web app CTA preserved');
 for (const f of ['index.html', 'text-compare/index.html', 'pdf-compare/index.html', 'chrome-extension/index.html']) {
   assert.ok((await read(f)).includes('<a href="/desktop/">Desktop</a>'), `${f} nav`);
