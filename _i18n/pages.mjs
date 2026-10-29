@@ -5,7 +5,7 @@
 const feature = (slug, lastmod, extra = {}) => ({ key: slug, path: `/${slug}/`, source: `${slug}/index.html`, lastmod, mainClass: 'feature-page', sitemap: true, ...extra });
 
 export const PAGES = [
-  { key: 'home', path: '/', source: 'index.html', lastmod: '2026-10-25', mainClass: '', sitemap: true },
+  { key: 'home', path: '/', source: 'index.html', lastmod: '2026-10-29', mainClass: '', sitemap: true },
   feature('text-compare', '2026-10-19'),
   feature('semantic-diff', '2026-10-19'),
   feature('pdf-compare', '2026-10-19', { ogImage: 'assets/app-preview-pdf.png' }),
