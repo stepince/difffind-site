@@ -56,7 +56,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/pdf-compare/"/>
   </url>
   <url><loc>https://difffind.com/excel-compare/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://difffind.com/word-compare/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://difffind.com/word-compare/</loc><lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://difffind.com/word-compare/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://difffind.com/es/word-compare/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/word-compare/"/>
@@ -113,8 +113,8 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://difffind.com/pt-br/url-compare/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://difffind.com/url-compare/"/>
   </url>
-  <url><loc>https://difffind.com/curl-compare/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://difffind.com/api-compare/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://difffind.com/curl-compare/</loc><lastmod>2026-10-30</lastmod></url>
+  <url><loc>https://difffind.com/api-compare/</loc><lastmod>2026-10-30</lastmod></url>
   <url><loc>https://difffind.com/semantic-search/</loc><lastmod>2026-10-06</lastmod></url>
   <url><loc>https://difffind.com/document-compare/</loc><lastmod>2026-10-06</lastmod></url>
   <url><loc>https://difffind.com/semantic-document-search/</loc><lastmod>2026-10-06</lastmod></url>
