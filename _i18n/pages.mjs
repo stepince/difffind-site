@@ -13,7 +13,7 @@ export const PAGES = [
   feature('word-compare', '2026-10-30', { ogImage: 'assets/app-preview-docx.png' }),
   feature('json-compare', '2026-11-01'),
   feature('yaml-compare', '2026-11-01'),
-  feature('xml-compare', '2026-10-19'),
+  feature('xml-compare', '2026-11-01'),
   feature('csv-compare', '2026-10-06'),
   feature('url-compare', '2026-10-19'),
   feature('curl-compare', '2026-10-30'),
