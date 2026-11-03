@@ -176,7 +176,6 @@ export function renderPage(ctx, lang, page) {
   const appButton = `<a class="button small light" data-app-link rel="nofollow" href="${APP_URL}/">${escText(locale.openApp)} ${BRAND} <span aria-hidden="true">↗</span></a>`;
   const footerNav = `<nav class="wrap footer-nav" aria-label="${esc(locale.footer.navAria)}"><span>${escText(locale.footer.compare)}</span>${toolLinks(FOOTER_ORDER)}</nav>`;
   const related = page.key === 'home' ? `\n  <p class="wrap related-tools">${locale.footer.relatedTools}</p>` : '';
-  const boost = page.key === 'home' ? '\n  ' + /<div class="wrap" style="text-align:center;padding-bottom:29px">[\s\S]*?<\/a>\s*<\/div>/.exec(read(ctx, 'index.html'))[0] : '';
   const hreflang = hreflangHtml(ctx, page);
   const head = [
     `<meta charset="UTF-8">`,
@@ -222,7 +221,7 @@ ${body}
   </main>
   ${footerNav}${related}
   <footer class="wrap"><a href="${home}" aria-label="${esc(locale.footer.backToTop)}"><img src="/assets/difffind-wordmark.png" alt="DiffFind" width="1184" height="331"></a><p>${escText(locale.footer.tagline)}</p><span>© <span id="year">2026</span> <span class="brand-name">DiffFind</span> &middot; <a href="/privacy.html" lang="en" hreflang="en">${escText(locale.footer.privacy)}</a> &middot; <a href="/terms.html" lang="en" hreflang="en">${escText(locale.footer.terms)}</a></span></footer>
-  <p class="wrap app-language-note">${escText(locale.footer.appNote)}</p>${boost}
+  <p class="wrap app-language-note">${escText(locale.footer.appNote)}</p>
 </body>
 </html>
 `;
