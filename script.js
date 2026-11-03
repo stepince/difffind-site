@@ -200,32 +200,33 @@ if (quickForm) {
   if (document.fonts) document.fonts.ready.then(updateQuickFormTop);
 }
 
-// Excel example: fetches the two sample workbooks from this site and hands them to the app in the URL fragment (same
-// mechanism as the quick text diff, v2 payload). Nothing is uploaded to a server and no CORS is involved.
-const excelExampleButton = document.querySelector('[data-excel-example]');
-if (excelExampleButton) {
-  const MAX_FILE_FRAGMENT_CHARS = 150000; // the app accepts up to 200000
-  const label = excelExampleButton.textContent;
-  const fileToPayload = async (url, name) => {
+// Example files: a button with data-handoff-before/after (site-relative file URLs) fetches the two sample files and hands them
+// to the app in the URL fragment (same mechanism as the quick text diff, v2 payload). Nothing is uploaded to a server and
+// no CORS is involved.
+const exampleFilesButton = document.querySelector('[data-handoff-before]');
+if (exampleFilesButton) {
+  const MAX_FILE_FRAGMENT_CHARS = 400000; // the app accepts up to 500000; the fragment is never sent to a server
+  const label = exampleFilesButton.textContent;
+  const fileToPayload = async url => {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return { name, data: toBase64Url(new Uint8Array(await response.arrayBuffer())) };
+    return { name: url.split('/').pop(), data: toBase64Url(new Uint8Array(await response.arrayBuffer())) };
   };
-  excelExampleButton.addEventListener('click', async () => {
-    excelExampleButton.disabled = true;
-    excelExampleButton.textContent = 'Loading example…';
+  exampleFilesButton.addEventListener('click', async () => {
+    exampleFilesButton.disabled = true;
+    exampleFilesButton.textContent = exampleFilesButton.dataset.loadingLabel ?? 'Loading example…';
     try {
       const [before, after] = await Promise.all([
-        fileToPayload('/assets/examples/product-catalog-before.xlsx', 'product-catalog-before.xlsx'),
-        fileToPayload('/assets/examples/product-catalog-after.xlsx', 'product-catalog-after.xlsx'),
+        fileToPayload(exampleFilesButton.dataset.handoffBefore),
+        fileToPayload(exampleFilesButton.dataset.handoffAfter),
       ]);
       const encoded = await encodeHandoff({ v: 2, files: { before, after } });
       if (encoded.length > MAX_FILE_FRAGMENT_CHARS) throw new Error('example too large');
       window.location.assign(`${HANDOFF_APP_URL}/#handoff=${encoded}`);
     } catch (err) {
-      excelExampleButton.disabled = false;
-      excelExampleButton.textContent = label;
-      excelExampleButton.title = 'Could not load the example. Use Try DiffFind and choose your own files.';
+      exampleFilesButton.disabled = false;
+      exampleFilesButton.textContent = label;
+      exampleFilesButton.title = 'Could not load the example. Use Try DiffFind and choose your own files.';
     }
   });
 }
