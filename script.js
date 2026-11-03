@@ -84,11 +84,25 @@ document.querySelectorAll('.feature-menu').forEach(menu => {
 // (never sent to any server, stripped by the app as soon as it reads it) and
 // navigates this tab to the app, which fills in and runs the comparison.
 // Format: #handoff=gz.<base64url of gzip(JSON)> or #handoff=raw.<base64url of JSON>.
+const isLocalSite = ['localhost', '127.0.0.1'].includes(location.hostname);
+// On a local dev server, hand off to a local copy of the app (port 3222).
+const HANDOFF_APP_URL = isLocalSite ? 'http://localhost:3222' : APP_URL;
+const toBase64Url = bytes => {
+  let binary = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+};
+async function encodeHandoff(payload) {
+  const bytes = new TextEncoder().encode(JSON.stringify(payload));
+  if (typeof CompressionStream === 'function') {
+    const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
+    return `gz.${toBase64Url(new Uint8Array(await new Response(stream).arrayBuffer()))}`;
+  }
+  return `raw.${toBase64Url(bytes)}`;
+}
+
 const quickForm = document.querySelector('#quickDiff');
 if (quickForm) {
-  const isLocalSite = ['localhost', '127.0.0.1'].includes(location.hostname);
-  // On a local dev server, hand off to a local copy of the app (port 3222).
-  const HANDOFF_APP_URL = isLocalSite ? 'http://localhost:3222' : APP_URL;
   const MAX_FRAGMENT_CHARS = 60000; // stays under the smallest browser URL limits
   const beforeEl = document.querySelector('#quickBefore');
   const afterEl = document.querySelector('#quickAfter');
@@ -112,20 +126,6 @@ if (quickForm) {
       statusEl.append(link);
     }
   };
-  const toBase64Url = bytes => {
-    let binary = '';
-    for (let i = 0; i < bytes.length; i += 0x8000) binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
-    return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-  };
-  async function encodeHandoff(payload) {
-    const bytes = new TextEncoder().encode(JSON.stringify(payload));
-    if (typeof CompressionStream === 'function') {
-      const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
-      return `gz.${toBase64Url(new Uint8Array(await new Response(stream).arrayBuffer()))}`;
-    }
-    return `raw.${toBase64Url(bytes)}`;
-  }
-
   quickForm.addEventListener('submit', async event => {
     event.preventDefault();
     setStatus('');
@@ -198,4 +198,34 @@ if (quickForm) {
     document.querySelectorAll('.header, .hero-head').forEach(el => observer.observe(el));
   }
   if (document.fonts) document.fonts.ready.then(updateQuickFormTop);
+}
+
+// Excel example: fetches the two sample workbooks from this site and hands them to the app in the URL fragment (same
+// mechanism as the quick text diff, v2 payload). Nothing is uploaded to a server and no CORS is involved.
+const excelExampleButton = document.querySelector('[data-excel-example]');
+if (excelExampleButton) {
+  const MAX_FILE_FRAGMENT_CHARS = 150000; // the app accepts up to 200000
+  const label = excelExampleButton.textContent;
+  const fileToPayload = async (url, name) => {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return { name, data: toBase64Url(new Uint8Array(await response.arrayBuffer())) };
+  };
+  excelExampleButton.addEventListener('click', async () => {
+    excelExampleButton.disabled = true;
+    excelExampleButton.textContent = 'Loading example…';
+    try {
+      const [before, after] = await Promise.all([
+        fileToPayload('/assets/examples/product-catalog-before.xlsx', 'product-catalog-before.xlsx'),
+        fileToPayload('/assets/examples/product-catalog-after.xlsx', 'product-catalog-after.xlsx'),
+      ]);
+      const encoded = await encodeHandoff({ v: 2, files: { before, after } });
+      if (encoded.length > MAX_FILE_FRAGMENT_CHARS) throw new Error('example too large');
+      window.location.assign(`${HANDOFF_APP_URL}/#handoff=${encoded}`);
+    } catch (err) {
+      excelExampleButton.disabled = false;
+      excelExampleButton.textContent = label;
+      excelExampleButton.title = 'Could not load the example. Use Try DiffFind and choose your own files.';
+    }
+  });
 }
