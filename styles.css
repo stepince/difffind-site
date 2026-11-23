@@ -113,3 +113,5 @@
 @media(max-width:650px){.header nav{position:relative}.lang-menu{position:static}.lang-menu-links{left:0;right:0;top:calc(100% + 6px);width:auto;max-width:none}}
 .app-language-note{margin-block:0;padding-block:0 18px;font-size:12px;color:var(--muted);text-align:center}
 .feature-usefulness a.button{color:#fff;text-decoration:none}.feature-usefulness a.button.light{color:var(--ink)}
+
+.pdf-slot{min-width:0}.pdf-slot-body{border:1px solid var(--line);border-radius:8px;background:#fcfdfe;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center}.pdf-slot-body img{display:block;width:100%;max-width:340px;height:auto;border:1px solid var(--line);border-radius:4px;box-shadow:0 6px 18px #1f486e14}.pdf-slot-name{margin:10px 0 0;font:12px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--muted)}.pdf-slot-empty{margin:0;font-size:13px;line-height:1.7;color:var(--muted);max-width:260px}

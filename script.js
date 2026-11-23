@@ -203,15 +203,15 @@ if (quickForm) {
 // Example files: a button with data-handoff-before/after (site-relative file URLs) fetches the two sample files and hands them
 // to the app in the URL fragment (same mechanism as the quick text diff, v2 payload). Nothing is uploaded to a server and
 // no CORS is involved.
+const MAX_FILE_FRAGMENT_CHARS = 400000; // the app accepts up to 500000; the fragment is never sent to a server
+const fileToPayload = async url => {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return { name: url.split('/').pop(), data: toBase64Url(new Uint8Array(await response.arrayBuffer())) };
+};
 const exampleFilesButton = document.querySelector('[data-handoff-before]');
 if (exampleFilesButton) {
-  const MAX_FILE_FRAGMENT_CHARS = 400000; // the app accepts up to 500000; the fragment is never sent to a server
   const label = exampleFilesButton.textContent;
-  const fileToPayload = async url => {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return { name: url.split('/').pop(), data: toBase64Url(new Uint8Array(await response.arrayBuffer())) };
-  };
   exampleFilesButton.addEventListener('click', async () => {
     exampleFilesButton.disabled = true;
     exampleFilesButton.textContent = exampleFilesButton.dataset.loadingLabel ?? 'Loading example…';
@@ -227,6 +227,59 @@ if (exampleFilesButton) {
       exampleFilesButton.disabled = false;
       exampleFilesButton.textContent = label;
       exampleFilesButton.title = 'Could not load the example. Use Try DiffFind and choose your own files.';
+    }
+  });
+}
+
+// PDF feature page: a quick-compare card like the XML page's. "Load example" shows page-1 previews of the two sample PDFs;
+// "Find difference" then hands those files to the app (same fragment mechanism as above). With nothing loaded it just opens
+// the app's file picker.
+const pdfQuick = document.querySelector('#pdfQuick');
+if (pdfQuick) {
+  const slots = { before: document.querySelector('#pdfSlotBefore .pdf-slot-body'), after: document.querySelector('#pdfSlotAfter .pdf-slot-body') };
+  const empty = { before: slots.before.innerHTML, after: slots.after.innerHTML };
+  const statusEl = document.querySelector('#pdfStatus');
+  const findButton = document.querySelector('#pdfFind');
+  const findLabel = findButton.innerHTML;
+  let loaded = false;
+  const render = (which, url) => {
+    const name = url.split('/').pop();
+    slots[which].replaceChildren();
+    const img = document.createElement('img');
+    img.src = url.replace(/\.pdf$/, '.png');
+    img.alt = (pdfQuick.dataset.msgAlt ?? 'First page of {name}').replace('{name}', name);
+    img.width = 680; img.height = 880;
+    const caption = document.createElement('p');
+    caption.className = 'pdf-slot-name';
+    caption.textContent = name;
+    slots[which].append(img, caption);
+  };
+  document.querySelector('#pdfLoadExample').addEventListener('click', () => {
+    render('before', pdfQuick.dataset.exampleBefore);
+    render('after', pdfQuick.dataset.exampleAfter);
+    loaded = true;
+    statusEl.textContent = '';
+  });
+  document.querySelector('#pdfClear').addEventListener('click', () => {
+    slots.before.innerHTML = empty.before;
+    slots.after.innerHTML = empty.after;
+    loaded = false;
+    statusEl.textContent = '';
+  });
+  pdfQuick.addEventListener('submit', async event => {
+    if (!loaded) return; // native GET to the app with inputType=file
+    event.preventDefault();
+    findButton.disabled = true;
+    findButton.textContent = pdfQuick.dataset.msgLoading ?? 'Loading example…';
+    try {
+      const [before, after] = await Promise.all([fileToPayload(pdfQuick.dataset.exampleBefore), fileToPayload(pdfQuick.dataset.exampleAfter)]);
+      const encoded = await encodeHandoff({ v: 2, files: { before, after } });
+      if (encoded.length > MAX_FILE_FRAGMENT_CHARS) throw new Error('example too large');
+      window.location.assign(`${HANDOFF_APP_URL}/#handoff=${encoded}`);
+    } catch (err) {
+      findButton.disabled = false;
+      findButton.innerHTML = findLabel;
+      statusEl.textContent = pdfQuick.dataset.msgError ?? 'Could not load the example. Clear it and choose your own files in the app.';
     }
   });
 }
