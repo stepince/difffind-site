@@ -245,14 +245,17 @@ if (pdfQuick) {
   const render = (which, url) => {
     const name = url.split('/').pop();
     slots[which].replaceChildren();
-    const img = document.createElement('img');
-    img.src = url.replace(/\.pdf$/, '.png');
-    img.alt = (pdfQuick.dataset.msgAlt ?? 'First page of {name}').replace('{name}', name);
-    img.width = 680; img.height = 880;
-    const caption = document.createElement('p');
+    const frame = document.createElement('iframe');
+    frame.src = `${url}#toolbar=0&navpanes=0&view=FitH`;
+    frame.title = (pdfQuick.dataset.msgAlt ?? 'Preview of {name}').replace('{name}', name);
+    frame.loading = 'lazy';
+    const caption = document.createElement('a');
     caption.className = 'pdf-slot-name';
+    caption.href = url;
+    caption.target = '_blank';
+    caption.rel = 'noopener';
     caption.textContent = name;
-    slots[which].append(img, caption);
+    slots[which].append(frame, caption);
   };
   document.querySelector('#pdfLoadExample').addEventListener('click', () => {
     render('before', pdfQuick.dataset.exampleBefore);
