@@ -70,7 +70,7 @@ export function selectorHtml(ctx, currentLang, page) {
     const cur = l === currentLang ? ' aria-current="true"' : '';
     return `<a href="${selectorTarget(ctx, l, page)}" lang="${LANGUAGES[l].hreflang}" hreflang="${LANGUAGES[l].hreflang}"${cur}>${LANGUAGES[l].native}</a>`;
   }).join('');
-  return `<details class="feature-menu lang-menu"><summary aria-label="${esc(label)}: ${esc(LANGUAGES[currentLang].native)}">${GLOBE} ${LANGUAGES[currentLang].native}</summary><div class="feature-menu-links lang-menu-links">${items}</div></details>`;
+  return `<details class="feature-menu lang-menu"><summary aria-label="${esc(label)}: ${esc(LANGUAGES[currentLang].native)}">${GLOBE} ${LANGUAGES[currentLang].short ?? LANGUAGES[currentLang].native}</summary><div class="feature-menu-links lang-menu-links">${items}</div></details>`;
 }
 export function hreflangHtml(ctx, page) {
   const langs = equivalents(ctx, page);

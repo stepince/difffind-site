@@ -13,7 +13,7 @@ export const APP_URL = 'https://app.difffind.com';
 export const LANGUAGES = {
   en: { hreflang: 'en', native: 'English', ogLocale: 'en_US' },
   es: { hreflang: 'es', native: 'Español', ogLocale: 'es_ES' },
-  'pt-br': { hreflang: 'pt-BR', native: 'Português (Brasil)', ogLocale: 'pt_BR' },
+  'pt-br': { hreflang: 'pt-BR', native: 'Português (Brasil)', short: 'Português', ogLocale: 'pt_BR' },
   de: { hreflang: 'de', native: 'Deutsch', ogLocale: 'de_DE' },
   fr: { hreflang: 'fr', native: 'Français', ogLocale: 'fr_FR' },
   ja: { hreflang: 'ja', native: '日本語', ogLocale: 'ja_JP' },
